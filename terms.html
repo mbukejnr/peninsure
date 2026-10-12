@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Terms & Conditions | PenInsure</title>
+
+    <meta
+        name="description"
+        content="Read PenInsure's website terms and conditions covering pension brokerage, insurance brokerage, business services, and website use."
+    >
+
+    <meta name="theme-color" content="#10243a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+        :root {
+            --navy: #10243a;
+            --navy-dark: #091827;
+            --navy-light: #183954;
+            --gold: #e9ad38;
+            --gold-light: #fff4d9;
+            --white: #ffffff;
+            --background: #f5f7fa;
+            --text: #253449;
+            --muted: #697789;
+            --border: #e3e8ef;
+            --shadow: 0 15px 45px rgba(16, 36, 58, 0.08);
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        /* NAVIGATION */
+
+        .site-header {
+            background: var(--white);
+            border-bottom: 1px solid rgba(16, 36, 58, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            flex-shrink: 0;
+        }
+
+        .brand-icon {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            color: var(--gold);
+            background: var(--navy);
+            border-radius: 12px;
+            font-size: 21px;
+        }
+
+        .brand-text {
+            font-family: "Manrope", sans-serif;
+            font-size: 25px;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: -1px;
+        }
+
+        .brand-text span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #526174;
+            font-size: 13px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white) !important;
+            padding: 12px 18px;
+            border-radius: 9px;
+            transition: background 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--navy-light);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--navy);
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 86px 0 92px;
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(233, 173, 56, 0.15),
+                    transparent 27%
+                ),
+                linear-gradient(120deg, var(--navy-dark), var(--navy));
+            color: var(--white);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            right: -120px;
+            bottom: -210px;
+            border: 1px solid rgba(233, 173, 56, 0.22);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 45px rgba(233, 173, 56, 0.025),
+                0 0 0 90px rgba(233, 173, 56, 0.025);
+        }
+
+        .hero-content {
+            max-width: 790px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 27px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(36px, 5vw, 57px);
+            line-height: 1.14;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 690px;
+            color: #d0d9e4;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin-top: 28px;
+            color: #d0d9e4;
+            font-size: 12px;
+        }
+
+        .hero-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-meta i {
+            color: var(--gold);
+        }
+
+        /* PAGE LAYOUT */
+
+        .page-layout {
+            display: grid;
+            grid-template-columns: 280px minmax(0, 1fr);
+            gap: 30px;
+            align-items: start;
+            padding-top: 60px;
+            padding-bottom: 85px;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 112px;
+        }
+
+        .sidebar-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 25px 21px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar h2 {
+            font-family: "Manrope", sans-serif;
+            font-size: 16px;
+            color: var(--navy);
+            margin-bottom: 17px;
+        }
+
+        .toc {
+            list-style: none;
+        }
+
+        .toc li + li {
+            margin-top: 4px;
+        }
+
+        .toc a {
+            display: block;
+            padding: 9px 11px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 7px;
+            transition: all 0.2s ease;
+        }
+
+        .toc a:hover {
+            background: var(--gold-light);
+            color: var(--navy);
+        }
+
+        .sidebar-note {
+            margin-top: 19px;
+            padding: 16px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        .sidebar-note i {
+            color: var(--gold);
+            margin-right: 6px;
+        }
+
+        .sidebar-note p {
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        /* CONTENT */
+
+        .content-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: clamp(25px, 4vw, 48px);
+            box-shadow: var(--shadow);
+            min-width: 0;
+        }
+
+        .intro-box {
+            padding: 23px 25px;
+            margin-bottom: 35px;
+            background: #fffaf0;
+            border: 1px solid #f1dfb5;
+            border-left: 4px solid var(--gold);
+            border-radius: 10px;
+        }
+
+        .intro-box h2 {
+            font-family: "Manrope", sans-serif;
+            color: var(--navy);
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+
+        .intro-box p {
+            color: #586577;
+            font-size: 13px;
+        }
+
+        .legal-section {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+            scroll-margin-top: 115px;
+        }
+
+        .legal-section:first-of-type {
+            padding-top: 0;
+        }
+
+        .legal-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 16px;
+        }
+
+        .section-number {
+            width: 38px;
+            height: 38px;
+            flex: 0 0 38px;
+            display: grid;
+            place-items: center;
+            background: var(--gold-light);
+            color: var(--navy);
+            border-radius: 10px;
+            font-family: "Manrope", sans-serif;
+            font-weight: 800;
+            font-size: 13px;
+        }
+
+        .section-heading h2 {
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(18px, 2.2vw, 22px);
+            line-height: 1.45;
+            color: var(--navy);
+            padding-top: 5px;
+        }
+
+        .legal-section p {
+            color: #596779;
+            font-size: 13px;
+            margin-bottom: 13px;
+        }
+
+        .legal-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-section h3 {
+            font-family: "Manrope", sans-serif;
+            color: var(--navy);
+            font-size: 14px;
+            margin: 22px 0 9px;
+        }
+
+        .legal-section ul {
+            padding-left: 22px;
+            margin: 12px 0 16px;
+        }
+
+        .legal-section li {
+            color: #596779;
+            font-size: 13px;
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+
+        .legal-section li::marker {
+            color: var(--gold);
+        }
+
+        .legal-section strong {
+            color: #26384c;
+            font-weight: 700;
+        }
+
+        .text-link {
+            color: #a16b06;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-panel {
+            margin-top: 35px;
+            padding: 26px;
+            background: var(--navy);
+            border-radius: 14px;
+            color: var(--white);
+        }
+
+        .contact-panel h2 {
+            font-family: "Manrope", sans-serif;
+            font-size: 21px;
+            margin-bottom: 9px;
+        }
+
+        .contact-panel p {
+            color: #d0d9e4;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--navy-dark);
+            padding: 12px 17px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 800;
+            transition: transform 0.2s ease;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+
+        .site-footer {
+            background: var(--navy-dark);
+            color: var(--white);
+            padding: 62px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 42px;
+        }
+
+        .footer-brand .brand-text {
+            color: var(--white);
+        }
+
+        .footer-description {
+            max-width: 340px;
+            color: #aebdcd;
+            font-size: 12px;
+            margin-top: 19px;
+            line-height: 1.9;
+        }
+
+        .footer-column h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 14px;
+            margin-bottom: 17px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 11px;
+        }
+
+        .footer-column a {
+            color: #aebdcd;
+            font-size: 12px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom p,
+        .footer-bottom a {
+            color: #9cabbc;
+            font-size: 11px;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--gold);
+        }
+
+        .footer-legal-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .nav-links {
+                gap: 17px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .page-layout {
+                grid-template-columns: 240px minmax(0, 1fr);
+                gap: 20px;
+            }
+
+            .footer-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .navbar {
+                min-height: 74px;
+            }
+
+            .menu-toggle {
+                display: grid;
+                place-items: center;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 74px;
+                left: 0;
+                right: 0;
+                padding: 18px 20px 24px;
+                background: var(--white);
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 15px 25px rgba(16, 36, 58, 0.08);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 12px 10px;
+                font-size: 13px;
+            }
+
+            .nav-cta {
+                text-align: center;
+                margin-top: 8px;
+            }
+
+            .hero {
+                padding: 65px 0 70px;
+            }
+
+            .page-layout {
+                grid-template-columns: 1fr;
+                padding-top: 30px;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .sidebar-card {
+                padding: 22px;
+            }
+
+            .toc {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 3px 10px;
+            }
+
+            .sidebar-note {
+                margin-top: 15px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                width: min(100% - 28px, 1160px);
+            }
+
+            .brand-text {
+                font-size: 23px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.3px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .content-card {
+                padding: 22px 18px;
+            }
+
+            .intro-box {
+                padding: 19px;
+            }
+
+            .toc {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                gap: 11px;
+            }
+
+            .section-number {
+                width: 33px;
+                height: 33px;
+                flex-basis: 33px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+            .footer-bottom {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media print {
+            .site-header,
+            .sidebar,
+            .site-footer,
+            .contact-panel {
+                display: none !important;
+            }
+
+            body {
+                background: white;
+            }
+
+            .hero {
+                background: white;
+                color: black;
+                padding: 25px 0;
+            }
+
+            .hero p,
+            .hero-meta {
+                color: #333;
+            }
+
+            .page-layout {
+                display: block;
+                padding: 20px 0;
+            }
+
+            .content-card {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar" aria-label="Main navigation">
+
+                <a href="index.html" class="brand" aria-label="PenInsure home">
+                    <span class="brand-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
+
+                    <span class="brand-text">
+                        Pen<span>Insure</span>
+                    </span>
+                </a>
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navLinks"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li>
+                        <a href="contact.html" class="nav-cta">
+                            Contact Us
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+
+                <span class="eyebrow">Legal Information</span>
+
+                <h1>
+                    Terms & <span>Conditions</span>
+                </h1>
+
+                <p>
+                    These terms explain the conditions that apply when you
+                    access the PenInsure website, contact us, or enquire about
+                    pension and insurance brokerage services.
+                </p>
+
+                <div class="hero-meta">
+                    <span>
+                        <i class="fa-regular fa-calendar"></i>
+                        Effective date: Insert publication date
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Malawi
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <div class="page-layout">
+
+            <!-- TABLE OF CONTENTS -->
+            <aside class="sidebar">
+                <div class="sidebar-card">
+
+                    <h2>On This Page</h2>
+
+                    <ul class="toc">
+                        <li><a href="#introduction">1. Introduction</a></li>
+                        <li><a href="#acceptance">2. Acceptance of Terms</a></li>
+                        <li><a href="#eligibility">3. Eligibility</a></li>
+                        <li><a href="#services">4. Our Services</a></li>
+                        <li><a href="#information">5. Website Information</a></li>
+                        <li><a href="#no-advice">6. Advice and Recommendations</a></li>
+                        <li><a href="#third-parties">7. Third-Party Providers</a></li>
+                        <li><a href="#client-responsibilities">8. Client Responsibilities</a></li>
+                        <li><a href="#fees">9. Fees and Remuneration</a></li>
+                        <li><a href="#privacy">10. Privacy</a></li>
+                        <li><a href="#intellectual-property">11. Intellectual Property</a></li>
+                        <li><a href="#acceptable-use">12. Acceptable Use</a></li>
+                        <li><a href="#availability">13. Website Availability</a></li>
+                        <li><a href="#liability">14. Limitation of Liability</a></li>
+                        <li><a href="#indemnity">15. Indemnity</a></li>
+                        <li><a href="#termination">16. Suspension and Termination</a></li>
+                        <li><a href="#law">17. Governing Law</a></li>
+                        <li><a href="#changes">18. Changes to These Terms</a></li>
+                        <li><a href="#contact">19. Contact Us</a></li>
+                    </ul>
+
+                    <div class="sidebar-note">
+                        <p>
+                            <i class="fa-solid fa-circle-info"></i>
+                            Please read these terms carefully. Specific
+                            brokerage engagements may be governed by separate
+                            written agreements.
+                        </p>
+                    </div>
+
+                </div>
+            </aside>
+
+
+            <!-- TERMS CONTENT -->
+            <article class="content-card">
+
+                <div class="intro-box">
+                    <h2>Important Information</h2>
+                    <p>
+                        This page is a general draft of website terms for
+                        PenInsure. It should be reviewed and adapted to reflect
+                        the company's actual legal identity, authorisations,
+                        business practices, agreements, and applicable laws
+                        before publication. If you enter into a separate
+                        written agreement with PenInsure, the terms of that
+                        agreement may also apply.
+                    </p>
+                </div>
+
+
+                <!-- 1 -->
+                <section class="legal-section" id="introduction">
+                    <div class="section-heading">
+                        <span class="section-number">01</span>
+                        <h2>Introduction</h2>
+                    </div>
+
+                    <p>
+                        Welcome to PenInsure. These Terms and Conditions
+                        explain the rules governing your access to and use of
+                        this website and your interactions with us through
+                        the website.
+                    </p>
+
+                    <p>
+                        In these terms, the words <strong>"PenInsure," "we,"
+                        "us,"</strong> and <strong>"our"</strong> refer to the
+                        business operating under the PenInsure name. The
+                        words <strong>"you"</strong> and <strong>"your"</strong>
+                        refer to a person or organisation accessing this
+                        website or communicating with us.
+                    </p>
+
+                    <p>
+                        These terms apply to individual visitors, prospective
+                        clients, existing clients, employers, businesses, and
+                        other organisations using the website, subject to any
+                        separate written agreement that applies to a
+                        particular service.
+                    </p>
+                </section>
+
+
+                <!-- 2 -->
+                <section class="legal-section" id="acceptance">
+                    <div class="section-heading">
+                        <span class="section-number">02</span>
+                        <h2>Acceptance of These Terms</h2>
+                    </div>
+
+                    <p>
+                        By accessing or using this website, you acknowledge
+                        that you have read these terms and agree to comply
+                        with the provisions that apply to your use of it.
+                    </p>
+
+                    <p>
+                        If you do not agree with these terms, you should
+                        discontinue using the website.
+                    </p>
+
+                    <p>
+                        Sending an enquiry through the website does not, by
+                        itself, establish a brokerage mandate, client
+                        relationship, insurance contract, pension arrangement,
+                        or other binding commercial engagement. Such
+                        relationships may require additional documentation
+                        and acceptance by the relevant parties.
+                    </p>
+                </section>
+
+
+                <!-- 3 -->
+                <section class="legal-section" id="eligibility">
+                    <div class="section-heading">
+                        <span class="section-number">03</span>
+                        <h2>Eligibility and Authority</h2>
+                    </div>
+
+                    <p>
+                        You must provide information honestly and use this
+                        website for lawful purposes.
+                    </p>
+
+                    <p>
+                        If you submit an enquiry or request services on behalf
+                        of a company, employer, pension scheme, or other
+                        organisation, you confirm that you are authorised to
+                        make that enquiry or act on its behalf.
+                    </p>
+
+                    <p>
+                        We may request further information to establish your
+                        identity, authority, requirements, or eligibility
+                        before proceeding with a proposed engagement.
+                    </p>
+                </section>
+
+
+                <!-- 4 -->
+                <section class="legal-section" id="services">
+                    <div class="section-heading">
+                        <span class="section-number">04</span>
+                        <h2>Our Services</h2>
+                    </div>
+
+                    <p>
+                        PenInsure's website may describe pension brokerage,
+                        insurance brokerage, and related support services
+                        for individuals, employers, and businesses.
+                    </p>
+
+                    <h3>4.1 Pension Brokerage Services</h3>
+
+                    <p>Depending on the agreed scope of engagement, pension-related services may include:</p>
+
+                    <ul>
+                        <li>Helping clients explore pension scheme or provider options.</li>
+                        <li>Comparing scheme features, terms, and available information.</li>
+                        <li>Supporting employers in reviewing workplace pension arrangements.</li>
+                        <li>Coordinating enquiries, documentation, and communications with relevant providers.</li>
+                        <li>Providing agreed administrative, analytical, or reporting support relating to pension arrangements.</li>
+                    </ul>
+
+                    <h3>4.2 Insurance Brokerage Services</h3>
+
+                    <p>Depending on the agreed scope of engagement, insurance-related services may include:</p>
+
+                    <ul>
+                        <li>Helping individuals and businesses explore available insurance options.</li>
+                        <li>Comparing relevant policy features, exclusions, limits, and premiums using available information.</li>
+                        <li>Supporting insurance enquiries, quotations, and documentation.</li>
+                        <li>Coordinating communications between clients and relevant insurers or other providers.</li>
+                        <li>Supporting reviews of existing insurance arrangements.</li>
+                    </ul>
+
+                    <h3>4.3 Business and Employer Support</h3>
+
+                    <p>
+                        Where agreed, business services may include analytical
+                        support, information summaries, scheme or policy
+                        comparisons, reporting assistance, renewal coordination,
+                        and administrative support relating to pension and
+                        insurance arrangements.
+                    </p>
+
+                    <p>
+                        <strong>The exact services available depend on the
+                        engagement, the relevant provider, applicable
+                        requirements, and any authorisations required by law.</strong>
+                        Not every service described on the website will
+                        necessarily be available in every situation.
+                    </p>
+
+                    <p>
+                        We may update website descriptions as our services
+                        develop. A website description is not a guarantee that
+                        a particular product, provider, or service is available
+                        or suitable for every client.
+                    </p>
+                </section>
+
+
+                <!-- 5 -->
+                <section class="legal-section" id="information">
+                    <div class="section-heading">
+                        <span class="section-number">05</span>
+                        <h2>Website Information and Accuracy</h2>
+                    </div>
+
+                    <p>
+                        We aim to present website information clearly and
+                        keep it reasonably current. However, information on
+                        the website may be general in nature, may change,
+                        or may not cover every circumstance.
+                    </p>
+
+                    <p>
+                        Information about insurance policies, pension
+                        arrangements, premiums, contributions, benefits,
+                        eligibility, exclusions, provider requirements, or
+                        other financial matters should be checked against
+                        the relevant provider's current documents and terms.
+                    </p>
+
+                    <p>
+                        You should not rely solely on general website
+                        information when making a financial, pension, or
+                        insurance decision. Please request clarification
+                        where any information is unclear or incomplete.
+                    </p>
+
+                    <p>
+                        Nothing on this website is a promise that a particular
+                        application will be accepted, a policy issued, a
+                        pension arrangement approved, a claim paid, or a
+                        financial result achieved.
+                    </p>
+                </section>
+
+
+                <!-- 6 -->
+                <section class="legal-section" id="no-advice">
+                    <div class="section-heading">
+                        <span class="section-number">06</span>
+                        <h2>Advice, Comparisons, and Recommendations</h2>
+                    </div>
+
+                    <p>
+                        Information, comparisons, summaries, or explanations
+                        provided through this website are general in nature
+                        unless expressly identified as part of an agreed
+                        service.
+                    </p>
+
+                    <p>
+                        Whether a specific communication constitutes regulated
+                        advice or another regulated service depends on its
+                        actual content, circumstances, and applicable law,
+                        rather than simply on the wording used on this page.
+                    </p>
+
+                    <p>
+                        Where an individualised recommendation or other
+                        regulated service is required, it should be provided
+                        only through an appropriately authorised person or
+                        entity and under the applicable engagement terms.
+                    </p>
+
+                    <p>
+                        You should consider your own circumstances and review
+                        the relevant documentation before deciding whether
+                        to enter into a pension or insurance arrangement.
+                        You may also seek independent professional advice.
+                    </p>
+                </section>
+
+
+                <!-- 7 -->
+                <section class="legal-section" id="third-parties">
+                    <div class="section-heading">
+                        <span class="section-number">07</span>
+                        <h2>Third-Party Providers and Products</h2>
+                    </div>
+
+                    <p>
+                        Pension and insurance arrangements may involve
+                        independent pension administrators, scheme trustees,
+                        insurers, financial institutions, service providers,
+                        or other third parties.
+                    </p>
+
+                    <p>
+                        Unless expressly stated otherwise in a written
+                        agreement, these providers remain responsible for
+                        their own products, services, eligibility decisions,
+                        policy wording, scheme rules, underwriting decisions,
+                        administration, and contractual obligations.
+                    </p>
+
+                    <p>
+                        A quotation, comparison, introduction, or referral
+                        does not itself mean that a provider has accepted
+                        an application or that a contract has been concluded.
+                    </p>
+
+                    <p>
+                        Third-party products and services are subject to the
+                        relevant provider's terms, conditions, exclusions,
+                        fees, requirements, and approval processes.
+                    </p>
+
+                    <p>
+                        Links to external websites may be provided for
+                        convenience. We do not control external websites and
+                        are not automatically responsible for their content,
+                        availability, security, or privacy practices.
+                    </p>
+                </section>
+
+
+                <!-- 8 -->
+                <section class="legal-section" id="client-responsibilities">
+                    <div class="section-heading">
+                        <span class="section-number">08</span>
+                        <h2>Client Responsibilities</h2>
+                    </div>
+
+                    <p>
+                        When communicating with PenInsure or requesting
+                        services, you agree to:
+                    </p>
+
+                    <ul>
+                        <li>Provide accurate, complete, and current information to the best of your knowledge.</li>
+                        <li>Notify us when information relevant to an ongoing enquiry or engagement changes.</li>
+                        <li>Review documents, quotations, policy wording, scheme rules, and other relevant terms carefully.</li>
+                        <li>Ask questions where information or requirements are unclear.</li>
+                        <li>Provide documents and instructions that you are legally entitled to provide.</li>
+                        <li>Protect your passwords, account credentials, and other confidential access information, where applicable.</li>
+                        <li>Use the website and our communications lawfully and honestly.</li>
+                    </ul>
+
+                    <p>
+                        Delays, errors, incomplete assessments, or decisions
+                        may arise where required information is missing,
+                        inaccurate, or supplied late. The consequences in a
+                        particular engagement will depend on the circumstances,
+                        the applicable agreement, and the law.
+                    </p>
+                </section>
+
+
+                <!-- 9 -->
+                <section class="legal-section" id="fees">
+                    <div class="section-heading">
+                        <span class="section-number">09</span>
+                        <h2>Fees, Premiums, and Remuneration</h2>
+                    </div>
+
+                    <p>
+                        Any fees payable directly by a client to PenInsure
+                        should be communicated and agreed before the relevant
+                        paid service is undertaken, subject to applicable law.
+                    </p>
+
+                    <p>
+                        Insurance premiums, pension contributions, provider
+                        charges, administrative fees, taxes, and other costs
+                        may be payable to relevant third parties under their
+                        applicable terms.
+                    </p>
+
+                    <p>
+                        Where PenInsure receives commission, brokerage
+                        remuneration, or another payment connected with an
+                        arrangement, the applicable details should be
+                        disclosed where required by law, regulation, or the
+                        relevant engagement.
+                    </p>
+
+                    <p>
+                        Do not assume that every service is free or that every
+                        provider uses the same fee or remuneration structure.
+                        Any applicable charges and payment arrangements should
+                        be confirmed before proceeding.
+                    </p>
+                </section>
+
+
+                <!-- 10 -->
+                <section class="legal-section" id="privacy">
+                    <div class="section-heading">
+                        <span class="section-number">10</span>
+                        <h2>Privacy and Personal Information</h2>
+                    </div>
+
+                    <p>
+                        When you contact us or use our website, we may receive
+                        personal or business information that you choose to
+                        provide. The information collected and how it is used
+                        will depend on the website's actual functionality and
+                        your interaction with us.
+                    </p>
+
+                    <p>
+                        Our <a class="text-link" href="privacy.html">Privacy Policy</a>
+                        explains how personal information is intended to be
+                        collected, used, stored, and shared. Please read it
+                        alongside these terms.
+                    </p>
+
+                    <p>
+                        You should not send sensitive personal, financial,
+                        identity, pension, or insurance documents through an
+                        unsecured channel unless the method is appropriate
+                        and you are authorised to provide that information.
+                    </p>
+
+                    <p>
+                        Personal information should be handled in accordance
+                        with applicable data-protection and privacy
+                        requirements.
+                    </p>
+                </section>
+
+
+                <!-- 11 -->
+                <section class="legal-section" id="intellectual-property">
+                    <div class="section-heading">
+                        <span class="section-number">11</span>
+                        <h2>Intellectual Property</h2>
+                    </div>
+
+                    <p>
+                        Unless otherwise stated, the website's design,
+                        branding, text, graphics, logos, and other original
+                        content may be protected by intellectual-property
+                        laws.
+                    </p>
+
+                    <p>
+                        You may view the website and use its content for
+                        ordinary personal or internal business reference.
+                        You must not reproduce, distribute, commercially
+                        exploit, modify, or republish protected content
+                        without the necessary permission, except where
+                        permitted by law.
+                    </p>
+
+                    <p>
+                        Third-party names, trademarks, logos, and materials
+                        remain the property of their respective owners.
+                        Their appearance on this website does not necessarily
+                        imply endorsement, ownership, or partnership.
+                    </p>
+                </section>
+
+
+                <!-- 12 -->
+                <section class="legal-section" id="acceptable-use">
+                    <div class="section-heading">
+                        <span class="section-number">12</span>
+                        <h2>Acceptable Use of the Website</h2>
+                    </div>
+
+                    <p>
+                        You must not misuse this website or attempt to
+                        interfere with its operation, security, or availability.
+                    </p>
+
+                    <p>Prohibited conduct includes, where unlawful or unauthorised:</p>
+
+                    <ul>
+                        <li>Attempting to gain unauthorised access to systems, accounts, or data.</li>
+                        <li>Introducing malicious software or harmful code.</li>
+                        <li>Using automated means to disrupt or overload the website.</li>
+                        <li>Submitting fraudulent, misleading, abusive, or unlawful material.</li>
+                        <li>Using the website to violate another person's rights or applicable law.</li>
+                        <li>Attempting to obtain confidential information without authorisation.</li>
+                    </ul>
+
+                    <p>
+                        We may take reasonable steps to investigate suspected
+                        misuse and protect our website, users, systems, and
+                        lawful business interests.
+                    </p>
+                </section>
+
+
+                <!-- 13 -->
+                <section class="legal-section" id="availability">
+                    <div class="section-heading">
+                        <span class="section-number">13</span>
+                        <h2>Website Availability and Security</h2>
+                    </div>
+
+                    <p>
+                        We aim to keep the website accessible, but we do not
+                        guarantee uninterrupted or error-free availability.
+                        Access may be interrupted by maintenance, technical
+                        problems, connectivity issues, security measures,
+                        or circumstances beyond our reasonable control.
+                    </p>
+
+                    <p>
+                        We may update, suspend, or remove parts of the website
+                        where reasonably necessary.
+                    </p>
+
+                    <p>
+                        Although reasonable security measures may be used,
+                        no website or electronic communication method can
+                        be guaranteed to be completely secure. Please take
+                        appropriate precautions when sharing information online.
+                    </p>
+                </section>
+
+
+                <!-- 14 -->
+                <section class="legal-section" id="liability">
+                    <div class="section-heading">
+                        <span class="section-number">14</span>
+                        <h2>Limitation of Liability</h2>
+                    </div>
+
+                    <p>
+                        To the extent permitted by applicable law, PenInsure
+                        does not guarantee that the website will always be
+                        available, completely accurate, free from errors, or
+                        suitable for every user's particular purpose.
+                    </p>
+
+                    <p>
+                        General website content is provided for information
+                        and does not replace the specific terms of a pension
+                        scheme, insurance policy, provider contract, or
+                        separately agreed professional service.
+                    </p>
+
+                    <p>
+                        To the extent permitted by law, we are not responsible
+                        for losses arising solely from a user's unauthorised
+                        reliance on incomplete general website information,
+                        a third-party website, or a third-party product or
+                        service that is outside our contractual responsibility.
+                    </p>
+
+                    <p>
+                        Nothing in these terms excludes or limits liability
+                        where such exclusion or limitation is prohibited by
+                        applicable law. These terms do not remove any rights
+                        or remedies that cannot legally be excluded.
+                    </p>
+
+                    <p>
+                        Any liability arising from a specific brokerage
+                        engagement will also depend on the applicable written
+                        agreement, the facts of the matter, and the law.
+                    </p>
+                </section>
+
+
+                <!-- 15 -->
+                <section class="legal-section" id="indemnity">
+                    <div class="section-heading">
+                        <span class="section-number">15</span>
+                        <h2>Indemnity</h2>
+                    </div>
+
+                    <p>
+                        To the extent permitted by applicable law, you may
+                        be responsible for losses or reasonable costs directly
+                        resulting from your unlawful use of the website, your
+                        deliberate misuse of our systems, or your material
+                        breach of these terms.
+                    </p>
+
+                    <p>
+                        This provision does not make you responsible for
+                        losses caused by PenInsure's own unlawful conduct
+                        or remove any rights you may have under applicable law.
+                    </p>
+                </section>
+
+
+                <!-- 16 -->
+                <section class="legal-section" id="termination">
+                    <div class="section-heading">
+                        <span class="section-number">16</span>
+                        <h2>Suspension and Termination</h2>
+                    </div>
+
+                    <p>
+                        We may restrict or suspend access to all or part of
+                        the website where reasonably necessary for security,
+                        maintenance, legal compliance, or the prevention of
+                        misuse.
+                    </p>
+
+                    <p>
+                        Ending access to the website does not automatically
+                        terminate a separate client agreement, pension
+                        arrangement, or insurance policy. Those arrangements
+                        are governed by their applicable contractual terms
+                        and legal requirements.
+                    </p>
+                </section>
+
+
+                <!-- 17 -->
+                <section class="legal-section" id="law">
+                    <div class="section-heading">
+                        <span class="section-number">17</span>
+                        <h2>Governing Law and Disputes</h2>
+                    </div>
+
+                    <p>
+                        These website terms are intended to be interpreted
+                        in accordance with the laws applicable in Malawi,
+                        subject to any mandatory legal requirements that
+                        apply to a particular matter.
+                    </p>
+
+                    <p>
+                        If a concern or dispute arises, the parties are
+                        encouraged to communicate in good faith and seek
+                        a practical resolution where appropriate.
+                    </p>
+
+                    <p>
+                        Nothing in this section prevents a person from
+                        exercising a legal right to approach a competent
+                        court, regulator, dispute-resolution body, or other
+                        relevant authority.
+                    </p>
+
+                    <p>
+                        The appropriate forum and procedure for a particular
+                        dispute may depend on the parties, the nature of
+                        the engagement, and applicable law.
+                    </p>
+                </section>
+
+
+                <!-- 18 -->
+                <section class="legal-section" id="changes">
+                    <div class="section-heading">
+                        <span class="section-number">18</span>
+                        <h2>Changes to These Terms</h2>
+                    </div>
+
+                    <p>
+                        We may revise these terms to reflect changes to
+                        the website, our services, operational practices,
+                        or applicable legal requirements.
+                    </p>
+
+                    <p>
+                        When changes are made, the updated version should
+                        be published on this page with a revised effective
+                        date where appropriate.
+                    </p>
+
+                    <p>
+                        Your continued use of the website after updated
+                        terms are published may be subject to the revised
+                        terms to the extent permitted by applicable law.
+                        Where a separate agreement or legal requirement
+                        requires notice or consent, that requirement will
+                        continue to apply.
+                    </p>
+                </section>
+
+
+                <!-- 19 -->
+                <section class="legal-section" id="contact">
+                    <div class="section-heading">
+                        <span class="section-number">19</span>
+                        <h2>Contact Us</h2>
+                    </div>
+
+                    <p>
+                        If you have questions about these Terms and
+                        Conditions, or need clarification about a service
+                        described on our website, please contact PenInsure.
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <a class="text-link" href="mailto:info@peninsure.mw">
+                            info@peninsure.mw
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Telephone:</strong>
+                        <a class="text-link" href="tel:+265XXXXXXXXX">
+                            +265 XX XXX XXXX
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Location:</strong> Malawi
+                    </p>
+
+                    <p>
+                        Please replace the contact details above with
+                        PenInsure's verified business contact information
+                        before publishing this page.
+                    </p>
+                </section>
+
+
+                <!-- CONTACT CTA -->
+                <div class="contact-panel">
+                    <h2>Need More Information?</h2>
+
+                    <p>
+                        Contact our team if you have questions about our
+                        pension brokerage, insurance brokerage, or business
+                        support services.
+                    </p>
+
+                    <a href="contact.html" class="contact-button">
+                        Contact PenInsure
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </article>
+
+        </div>
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <a href="index.html" class="brand">
+                        <span class="brand-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </span>
+
+                        <span class="brand-text">
+                            Pen<span>Insure</span>
+                        </span>
+                    </a>
+
+                    <p class="footer-description">
+                        Supporting individuals, employers, and businesses
+                        as they explore pension and insurance options
+                        through brokerage and related support services.
+                    </p>
+                </div>
+
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-column">
+                    <h3>Legal & Support</h3>
+
+                    <ul>
+                        <li><a href="faq.html">Frequently Asked Questions</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html" aria-current="page">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; <span id="currentYear"></span> PenInsure.
+                    All rights reserved.
+                </p>
+
+                <div class="footer-legal-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script>
+        // Mobile navigation
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+        const menuIcon = menuToggle.querySelector("i");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+
+            menuIcon.className = isOpen
+                ? "fa-solid fa-xmark"
+                : "fa-solid fa-bars";
+        });
+
+        // Close the mobile menu after selecting a link
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation menu");
+                menuIcon.className = "fa-solid fa-bars";
+            });
+        });
+
+        // Current year
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,3114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Careers at PenInsure | Join Our Team</title>
+
+    <meta name="description"
+          content="Explore career opportunities at PenInsure, a pension and insurance brokerage supporting individuals, businesses and employers in Malawi.">
+
+    <meta name="theme-color" content="#102b46">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #102b46;
+            --primary-light: #193f63;
+            --secondary: #2366a1;
+            --accent: #d9a441;
+            --accent-light: #f2d18a;
+
+            --background: #f5f8fc;
+            --white: #ffffff;
+            --text: #263648;
+            --muted: #69798a;
+            --border: #e1e8f0;
+
+            --success: #18794e;
+            --shadow: 0 12px 35px rgba(16, 43, 70, 0.08);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 3px solid rgba(217, 164, 65, 0.65);
+            outline-offset: 3px;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            max-width: 730px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--secondary);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 25px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: "Manrope", sans-serif;
+            line-height: 1.25;
+            color: var(--primary);
+        }
+
+        .section-heading h2 {
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .section-heading p {
+            font-size: 1.02rem;
+            color: var(--muted);
+        }
+
+        .btn {
+            min-height: 48px;
+            padding: 13px 23px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 0.93rem;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.55);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            color: var(--primary);
+            background: var(--white);
+        }
+
+        .btn-dark {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-dark:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            flex-shrink: 0;
+        }
+
+        .brand-symbol {
+            width: 43px;
+            height: 43px;
+            border-radius: 11px;
+            background: linear-gradient(145deg, var(--primary), var(--secondary));
+            color: var(--white);
+            display: grid;
+            place-items: center;
+            font-family: "Manrope", sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            box-shadow: 0 5px 14px rgba(16, 43, 70, 0.18);
+        }
+
+        .brand-name {
+            font-family: "Manrope", sans-serif;
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.7px;
+        }
+
+        .brand-name span {
+            color: var(--secondary);
+        }
+
+        .brand-description {
+            display: block;
+            color: var(--muted);
+            font-size: 0.63rem;
+            letter-spacing: 1.15px;
+            text-transform: uppercase;
+            margin-top: -2px;
+        }
+
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .desktop-nav > a:not(.btn) {
+            font-size: 0.88rem;
+            color: #536477;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .desktop-nav > a:not(.btn):hover,
+        .desktop-nav > a.active {
+            color: var(--secondary);
+        }
+
+        .desktop-nav .nav-cta {
+            min-height: 43px;
+            padding: 10px 17px;
+            font-size: 0.86rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            width: 45px;
+            height: 45px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            border-radius: 9px;
+            color: var(--primary);
+            font-size: 1.15rem;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(67, 127, 177, 0.28),
+                    transparent 32%
+                ),
+                linear-gradient(120deg, #102b46 0%, #163c60 58%, #20567f 100%);
+            color: var(--white);
+            padding: 105px 0 100px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 430px;
+            height: 430px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            right: -120px;
+            top: -180px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 290px;
+            height: 290px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            right: 50px;
+            bottom: -210px;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .hero .eyebrow {
+            color: var(--accent-light);
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: clamp(2.5rem, 5vw, 4.15rem);
+            letter-spacing: -2px;
+            font-weight: 800;
+            line-height: 1.12;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-light);
+        }
+
+        .hero-copy {
+            color: #d7e4ef;
+            font-size: 1.08rem;
+            max-width: 650px;
+            margin-bottom: 32px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .hero-note {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 28px;
+            font-size: 0.86rem;
+            color: #d7e4ef;
+        }
+
+        .hero-note i {
+            color: var(--accent-light);
+        }
+
+        .hero-panel {
+            position: relative;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 35px;
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 25px 65px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-panel-icon {
+            width: 60px;
+            height: 60px;
+            display: grid;
+            place-items: center;
+            background: rgba(217, 164, 65, 0.16);
+            border: 1px solid rgba(217, 164, 65, 0.4);
+            border-radius: 15px;
+            color: var(--accent-light);
+            font-size: 1.55rem;
+            margin-bottom: 24px;
+        }
+
+        .hero-panel h2 {
+            color: var(--white);
+            font-size: 1.45rem;
+            margin-bottom: 13px;
+        }
+
+        .hero-panel > p {
+            color: #d7e4ef;
+            font-size: 0.94rem;
+            margin-bottom: 25px;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            padding: 14px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.13);
+        }
+
+        .hero-feature i {
+            color: var(--accent-light);
+            margin-top: 4px;
+        }
+
+        .hero-feature strong {
+            display: block;
+            font-size: 0.93rem;
+            margin-bottom: 3px;
+        }
+
+        .hero-feature span {
+            display: block;
+            color: #d7e4ef;
+            font-size: 0.82rem;
+        }
+
+        /* =========================
+           INTRO STRIP
+        ========================= */
+
+        .intro-strip {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .intro-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 28px 30px;
+            border-right: 1px solid var(--border);
+        }
+
+        .intro-item:first-child {
+            padding-left: 0;
+        }
+
+        .intro-item:last-child {
+            border-right: 0;
+        }
+
+        .intro-icon {
+            width: 47px;
+            height: 47px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: #edf4fb;
+            color: var(--secondary);
+            font-size: 1.15rem;
+        }
+
+        .intro-item h3 {
+            font-size: 0.98rem;
+            margin-bottom: 3px;
+        }
+
+        .intro-item p {
+            color: var(--muted);
+            font-size: 0.83rem;
+        }
+
+        /* =========================
+           WHY JOIN
+        ========================= */
+
+        .why-section {
+            background: var(--background);
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px 25px;
+            transition: 0.25s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: #cad9e8;
+        }
+
+        .benefit-icon {
+            width: 54px;
+            height: 54px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            color: var(--secondary);
+            background: #edf4fb;
+            font-size: 1.3rem;
+            margin-bottom: 23px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.08rem;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           CAREER AREAS
+        ========================= */
+
+        .career-areas {
+            background: var(--white);
+        }
+
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 23px;
+        }
+
+        .career-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            background: var(--white);
+            transition: 0.25s ease;
+        }
+
+        .career-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-4px);
+        }
+
+        .career-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .career-icon {
+            width: 53px;
+            height: 53px;
+            display: grid;
+            place-items: center;
+            color: var(--secondary);
+            background: #edf4fb;
+            border-radius: 13px;
+            font-size: 1.25rem;
+        }
+
+        .career-label {
+            display: inline-block;
+            background: #f5f0e4;
+            color: #8b671e;
+            padding: 6px 10px;
+            border-radius: 30px;
+            font-size: 0.69rem;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+        }
+
+        .career-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+        }
+
+        .career-card > p {
+            color: var(--muted);
+            font-size: 0.91rem;
+            margin-bottom: 20px;
+        }
+
+        .career-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .career-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: #536477;
+        }
+
+        .career-list i {
+            color: var(--success);
+            margin-top: 5px;
+            font-size: 0.77rem;
+        }
+
+        .career-disclaimer {
+            margin-top: 25px;
+            padding: 17px 20px;
+            background: #f7f9fc;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .career-disclaimer i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+
+        /* =========================
+           CURRENT VACANCIES
+        ========================= */
+
+        .openings-section {
+            background: var(--background);
+        }
+
+        .openings-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .openings-intro {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .openings-intro h2 {
+            font-size: clamp(1.9rem, 4vw, 2.6rem);
+            margin-bottom: 14px;
+        }
+
+        .openings-intro p {
+            color: var(--muted);
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .vacancy-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .job-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--secondary);
+            border-radius: 13px;
+            padding: 27px 30px;
+            box-shadow: 0 4px 15px rgba(16, 43, 70, 0.025);
+            transition: 0.25s ease;
+        }
+
+        .job-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+        }
+
+        .job-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .job-heading h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            color: var(--muted);
+            font-size: 0.83rem;
+        }
+
+        .job-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .job-meta i {
+            color: var(--secondary);
+        }
+
+        .job-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            white-space: nowrap;
+            padding: 7px 11px;
+            border-radius: 30px;
+            background: #eaf5ef;
+            color: var(--success);
+            font-size: 0.73rem;
+            font-weight: 800;
+        }
+
+        .job-summary {
+            color: var(--muted);
+            font-size: 0.91rem;
+            margin: 20px 0;
+        }
+
+        .job-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .job-actions .btn {
+            min-height: 43px;
+            padding: 10px 17px;
+            font-size: 0.86rem;
+        }
+
+        .job-details {
+            display: none;
+            border-top: 1px solid var(--border);
+            margin-top: 22px;
+            padding-top: 22px;
+        }
+
+        .job-details.open {
+            display: block;
+            animation: reveal 0.25s ease;
+        }
+
+        .job-details h4 {
+            font-size: 0.97rem;
+            margin: 19px 0 10px;
+        }
+
+        .job-details h4:first-child {
+            margin-top: 0;
+        }
+
+        .job-details ul {
+            padding-left: 20px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .job-details li {
+            margin-bottom: 7px;
+        }
+
+        .empty-state {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 55px 35px;
+            text-align: center;
+        }
+
+        .empty-icon {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: #edf4fb;
+            color: var(--secondary);
+            display: grid;
+            place-items: center;
+            margin: 0 auto 23px;
+            font-size: 1.8rem;
+        }
+
+        .empty-state h3 {
+            font-size: 1.35rem;
+            margin-bottom: 13px;
+        }
+
+        .empty-state p {
+            max-width: 570px;
+            margin: 0 auto 24px;
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        /* =========================
+           HOW TO APPLY
+        ========================= */
+
+        .application-section {
+            background: var(--white);
+        }
+
+        .application-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 65px;
+            align-items: start;
+        }
+
+        .application-copy h2 {
+            font-size: clamp(1.9rem, 4vw, 2.65rem);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .application-copy > p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .application-points {
+            list-style: none;
+            display: grid;
+            gap: 17px;
+        }
+
+        .application-points li {
+            display: flex;
+            gap: 13px;
+            align-items: flex-start;
+        }
+
+        .application-points i {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            background: #edf4fb;
+            color: var(--secondary);
+            border-radius: 50%;
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+
+        .application-points strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 3px;
+        }
+
+        .application-points span {
+            color: var(--muted);
+            font-size: 0.87rem;
+        }
+
+        .application-form-wrap {
+            background: var(--background);
+            border: 1px solid var(--border);
+            padding: 34px;
+            border-radius: 17px;
+        }
+
+        .application-form-wrap h3 {
+            font-size: 1.35rem;
+            margin-bottom: 9px;
+        }
+
+        .form-intro {
+            color: var(--muted);
+            font-size: 0.89rem;
+            margin-bottom: 25px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .required {
+            color: #b42318;
+        }
+
+        .form-control {
+            width: 100%;
+            min-height: 48px;
+            border: 1px solid #d7e0e9;
+            border-radius: 8px;
+            background: var(--white);
+            padding: 12px 14px;
+            color: var(--text);
+            transition: border-color 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(35, 102, 161, 0.09);
+        }
+
+        textarea.form-control {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        .form-note {
+            color: var(--muted);
+            font-size: 0.77rem;
+            margin-top: 12px;
+        }
+
+        .form-message {
+            display: none;
+            padding: 13px 15px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+        }
+
+        .form-message.visible {
+            display: block;
+        }
+
+        .form-message.error {
+            background: #fff1f0;
+            color: #9b1c1c;
+            border: 1px solid #f4c7c3;
+        }
+
+        /* =========================
+           CALL TO ACTION
+        ========================= */
+
+        .cta-section {
+            padding: 0 0 90px;
+            background: var(--white);
+        }
+
+        .cta-panel {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 35px;
+            background: linear-gradient(120deg, var(--primary), #1d5078);
+            border-radius: 19px;
+            padding: 48px 50px;
+        }
+
+        .cta-panel::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 50%;
+            right: 20%;
+            top: -180px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+        }
+
+        .cta-content h2 {
+            color: var(--white);
+            font-size: clamp(1.7rem, 3vw, 2.35rem);
+            margin-bottom: 13px;
+        }
+
+        .cta-content p {
+            color: #d7e4ef;
+            font-size: 0.96rem;
+        }
+
+        .cta-panel .btn {
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .site-footer {
+            background: #0b2035;
+            color: #d2deea;
+            padding: 65px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 0.8fr 0.8fr 1fr;
+            gap: 45px;
+            padding-bottom: 45px;
+        }
+
+        .footer-brand .brand-name {
+            color: var(--white);
+        }
+
+        .footer-brand .brand-name span {
+            color: var(--accent-light);
+        }
+
+        .footer-brand .brand-description {
+            color: #aebfd0;
+        }
+
+        .footer-brand > p {
+            max-width: 320px;
+            margin-top: 20px;
+            font-size: 0.88rem;
+            color: #aebfd0;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            font-size: 0.97rem;
+            margin-bottom: 21px;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .footer-links a,
+        .footer-links span {
+            color: #aebfd0;
+            font-size: 0.85rem;
+            transition: color 0.2s ease;
+            overflow-wrap: anywhere;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.11);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 23px 0;
+        }
+
+        .footer-bottom p {
+            color: #aebfd0;
+            font-size: 0.79rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a {
+            color: #aebfd0;
+            font-size: 0.79rem;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes reveal {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 1050px) {
+            .desktop-nav {
+                gap: 15px;
+            }
+
+            .desktop-nav > a:not(.btn) {
+                font-size: 0.82rem;
+            }
+
+            .hero-grid {
+                gap: 35px;
+            }
+
+            .benefit-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .career-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 800px) {
+            .section {
+                padding: 70px 0;
+            }
+
+            .navbar {
+                min-height: 74px;
+            }
+
+            .mobile-menu-btn {
+                display: grid;
+                place-items: center;
+            }
+
+            .desktop-nav {
+                display: none;
+                position: fixed;
+                top: 74px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 20px;
+                background: var(--white);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                overflow-y: auto;
+            }
+
+            .desktop-nav.open {
+                display: flex;
+            }
+
+            .desktop-nav > a:not(.btn) {
+                display: block;
+                padding: 16px 10px;
+                border-bottom: 1px solid var(--border);
+                font-size: 0.98rem;
+            }
+
+            .desktop-nav .nav-cta {
+                margin-top: 20px;
+                width: 100%;
+            }
+
+            .hero {
+                padding: 75px 0;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 38px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.4rem, 8vw, 3.5rem);
+            }
+
+            .hero-panel {
+                max-width: 600px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-item,
+            .intro-item:first-child {
+                padding: 22px 0;
+                border-right: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .intro-item:last-child {
+                border-bottom: 0;
+            }
+
+            .application-grid {
+                grid-template-columns: 1fr;
+                gap: 38px;
+            }
+
+            .cta-panel {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 35px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .container {
+                width: min(100% - 30px, 1160px);
+            }
+
+            .section {
+                padding: 58px 0;
+            }
+
+            .section-heading {
+                margin-bottom: 32px;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.3px;
+            }
+
+            .hero-copy {
+                font-size: 0.98rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+
+            .hero-panel {
+                padding: 25px;
+            }
+
+            .benefit-grid,
+            .career-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefit-card,
+            .career-card {
+                padding: 25px;
+            }
+
+            .job-card {
+                padding: 22px 19px;
+            }
+
+            .job-heading {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .job-meta {
+                flex-direction: column;
+                gap: 9px;
+            }
+
+            .job-actions {
+                flex-direction: column;
+            }
+
+            .job-actions .btn {
+                width: 100%;
+            }
+
+            .empty-state {
+                padding: 38px 22px;
+            }
+
+            .application-form-wrap {
+                padding: 23px 18px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .cta-panel {
+                padding: 29px 23px;
+            }
+
+            .cta-panel .btn {
+                width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .footer-bottom-links {
+                flex-wrap: wrap;
+            }
+
+            .brand-name {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar" aria-label="Main navigation">
+
+                <a href="index.html"
+                   class="brand"
+                   aria-label="PenInsure home">
+
+                    <!-- Replace this symbol with your existing logo if desired. -->
+                    <div class="brand-symbol" aria-hidden="true">
+                        PI
+                    </div>
+
+                    <div>
+                        <div class="brand-name">
+                            Pen<span>Insure</span>
+                        </div>
+
+                        <span class="brand-description">
+                            Pension &amp; Insurance Brokerage
+                        </span>
+                    </div>
+                </a>
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-controls="mainNav"
+                    aria-expanded="false">
+
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <div class="desktop-nav" id="mainNav">
+
+                    <a href="index.html">Home</a>
+
+                    <a href="about.html">About Us</a>
+
+                    <a href="services.html">Services</a>
+
+                    <a href="team.html">Our Team</a>
+
+                    <a href="faq.html">FAQs</a>
+
+                    <a href="careers.html" class="active"
+                       aria-current="page">Careers</a>
+
+                    <a href="contact.html" class="btn btn-dark nav-cta">
+                        Contact Us
+                        <i class="fa-solid fa-arrow-right"
+                           aria-hidden="true"></i>
+                    </a>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO SECTION
+        ========================= -->
+
+        <section class="hero">
+            <div class="container">
+
+                <div class="hero-grid">
+
+                    <div class="hero-content">
+
+                        <span class="eyebrow">
+                            Careers at PenInsure
+                        </span>
+
+                        <h1>
+                            Build a Career That
+                            <span>Creates Value.</span>
+                        </h1>
+
+                        <p class="hero-copy">
+                            Be part of a team helping individuals, businesses
+                            and employers explore pension, retirement,
+                            annuity and insurance options. Discover
+                            opportunities to contribute your skills,
+                            develop professionally and grow with PenInsure.
+                        </p>
+
+                        <div class="hero-actions">
+
+                            <a href="#openings" class="btn btn-primary">
+                                Explore Opportunities
+                                <i class="fa-solid fa-arrow-right"
+                                   aria-hidden="true"></i>
+                            </a>
+
+                            <a href="#why-join" class="btn btn-outline">
+                                Why Work With Us?
+                            </a>
+
+                        </div>
+
+                        <div class="hero-note">
+                            <i class="fa-solid fa-location-dot"
+                               aria-hidden="true"></i>
+
+                            <span>
+                                Career opportunities in Malawi
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-panel">
+
+                        <div class="hero-panel-icon">
+                            <i class="fa-solid fa-briefcase"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <h2>
+                            Make Your Experience Count
+                        </h2>
+
+                        <p>
+                            Bring your knowledge, ideas and commitment
+                            to work that supports financial planning,
+                            retirement preparedness and insurance needs.
+                        </p>
+
+                        <div class="hero-feature">
+
+                            <i class="fa-solid fa-check-circle"
+                               aria-hidden="true"></i>
+
+                            <div>
+                                <strong>Professional Development</strong>
+
+                                <span>
+                                    Opportunities to strengthen your
+                                    skills and industry knowledge.
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="hero-feature">
+
+                            <i class="fa-solid fa-check-circle"
+                               aria-hidden="true"></i>
+
+                            <div>
+                                <strong>Client-Focused Work</strong>
+
+                                <span>
+                                    Contribute to helping clients
+                                    understand their available options.
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="hero-feature">
+
+                            <i class="fa-solid fa-check-circle"
+                               aria-hidden="true"></i>
+
+                            <div>
+                                <strong>Meaningful Collaboration</strong>
+
+                                <span>
+                                    Work with colleagues and relevant
+                                    service providers to support clients.
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             INTRO STRIP
+        ========================= -->
+
+        <section class="intro-strip">
+            <div class="container">
+
+                <div class="intro-grid">
+
+                    <div class="intro-item">
+
+                        <div class="intro-icon">
+                            <i class="fa-solid fa-chart-line"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <div>
+                            <h3>Career Development</h3>
+
+                            <p>
+                                Build relevant professional skills.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="intro-item">
+
+                        <div class="intro-icon">
+                            <i class="fa-solid fa-handshake"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <div>
+                            <h3>Client Relationships</h3>
+
+                            <p>
+                                Help clients navigate their enquiries.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="intro-item">
+
+                        <div class="intro-icon">
+                            <i class="fa-solid fa-shield-halved"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <div>
+                            <h3>Professional Standards</h3>
+
+                            <p>
+                                Support responsible, client-focused work.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             WHY JOIN PENINSURE
+        ========================= -->
+
+        <section class="section why-section" id="why-join">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        Life at PenInsure
+                    </span>
+
+                    <h2>
+                        Grow Your Skills and Make a Contribution
+                    </h2>
+
+                    <p>
+                        We value professionalism, integrity, collaboration
+                        and a willingness to learn. Our work brings together
+                        people, information and services to help clients
+                        explore their pension and insurance needs.
+                    </p>
+
+                </div>
+
+
+                <div class="benefit-grid">
+
+                    <article class="benefit-card">
+
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-graduation-cap"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <h3>Learning and Development</h3>
+
+                        <p>
+                            Develop your understanding of pension schemes,
+                            insurance products, retirement options,
+                            client service and brokerage processes.
+                        </p>
+
+                    </article>
+
+
+                    <article class="benefit-card">
+
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-users"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <h3>Collaborative Environment</h3>
+
+                        <p>
+                            Contribute ideas, share knowledge and work
+                            with colleagues toward clear client-service
+                            objectives.
+                        </p>
+
+                    </article>
+
+
+                    <article class="benefit-card">
+
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-lightbulb"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <h3>Professional Initiative</h3>
+
+                        <p>
+                            Bring practical ideas, attention to detail
+                            and a willingness to improve how work is
+                            organised and delivered.
+                        </p>
+
+                    </article>
+
+
+                    <article class="benefit-card">
+
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-handshake-angle"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <h3>Meaningful Client Support</h3>
+
+                        <p>
+                            Help individuals, employers and businesses
+                            navigate enquiries about pension and
+                            insurance options.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             CAREER AREAS
+        ========================= -->
+
+        <section class="section career-areas" id="career-areas">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        Explore Career Areas
+                    </span>
+
+                    <h2>
+                        Where Could You Contribute?
+                    </h2>
+
+                    <p>
+                        PenInsure's work brings together brokerage,
+                        client relationships, employer support and
+                        business operations. The following areas
+                        illustrate the types of skills that may be
+                        relevant to future recruitment.
+                    </p>
+
+                </div>
+
+
+                <div class="career-grid">
+
+                    <!-- Career Area 1 -->
+
+                    <article class="career-card">
+
+                        <div class="career-card-top">
+
+                            <div class="career-icon">
+                                <i class="fa-solid fa-piggy-bank"
+                                   aria-hidden="true"></i>
+                            </div>
+
+                            <span class="career-label">
+                                Brokerage
+                            </span>
+
+                        </div>
+
+                        <h3>Pension &amp; Retirement Services</h3>
+
+                        <p>
+                            Support brokerage activities relating to
+                            pension schemes, retirement planning
+                            enquiries and annuity options available
+                            through relevant providers.
+                        </p>
+
+                        <ul class="career-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Pension scheme information and comparisons
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Retirement and annuity enquiries
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Client documentation and coordination
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- Career Area 2 -->
+
+                    <article class="career-card">
+
+                        <div class="career-card-top">
+
+                            <div class="career-icon">
+                                <i class="fa-solid fa-shield-halved"
+                                   aria-hidden="true"></i>
+                            </div>
+
+                            <span class="career-label">
+                                Brokerage
+                            </span>
+
+                        </div>
+
+                        <h3>Insurance Brokerage</h3>
+
+                        <p>
+                            Contribute to client enquiries and the
+                            comparison and coordination of insurance
+                            options offered by relevant providers.
+                        </p>
+
+                        <ul class="career-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Insurance enquiries and documentation
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Client relationship support
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Application and renewal coordination
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- Career Area 3 -->
+
+                    <article class="career-card">
+
+                        <div class="career-card-top">
+
+                            <div class="career-icon">
+                                <i class="fa-solid fa-building"
+                                   aria-hidden="true"></i>
+                            </div>
+
+                            <span class="career-label">
+                                Corporate
+                            </span>
+
+                        </div>
+
+                        <h3>Corporate &amp; Employer Support</h3>
+
+                        <p>
+                            Support employers and businesses with
+                            pension-related enquiries, employee
+                            benefits coordination and client records.
+                        </p>
+
+                        <ul class="career-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Employer and business relationships
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Employee benefits documentation
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Reporting and administrative support
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- Career Area 4 -->
+
+                    <article class="career-card">
+
+                        <div class="career-card-top">
+
+                            <div class="career-icon">
+                                <i class="fa-solid fa-headset"
+                                   aria-hidden="true"></i>
+                            </div>
+
+                            <span class="career-label">
+                                Client Service
+                            </span>
+
+                        </div>
+
+                        <h3>Client Service &amp; Administration</h3>
+
+                        <p>
+                            Help manage enquiries, maintain organised
+                            records and coordinate communication between
+                            clients and relevant providers.
+                        </p>
+
+                        <ul class="career-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Client enquiries and follow-ups
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Records and document management
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Communication and coordination
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- Career Area 5 -->
+
+                    <article class="career-card">
+
+                        <div class="career-card-top">
+
+                            <div class="career-icon">
+                                <i class="fa-solid fa-chart-column"
+                                   aria-hidden="true"></i>
+                            </div>
+
+                            <span class="career-label">
+                                Business Support
+                            </span>
+
+                        </div>
+
+                        <h3>Analysis &amp; Reporting Support</h3>
+
+                        <p>
+                            Apply analytical and organisational skills
+                            to support business clients with relevant
+                            reconciliations, information and reporting.
+                        </p>
+
+                        <ul class="career-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Data review and reconciliation
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Spreadsheet and reporting support
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Accuracy and record management
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- Career Area 6 -->
+
+                    <article class="career-card">
+
+                        <div class="career-card-top">
+
+                            <div class="career-icon">
+                                <i class="fa-solid fa-laptop-code"
+                                   aria-hidden="true"></i>
+                            </div>
+
+                            <span class="career-label">
+                                Operations
+                            </span>
+
+                        </div>
+
+                        <h3>Digital &amp; Business Operations</h3>
+
+                        <p>
+                            Support the systems and processes that
+                            help a modern brokerage organise its
+                            information and communicate with clients.
+                        </p>
+
+                        <ul class="career-list">
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Website and digital communication support
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Business process improvement
+                                </span>
+                            </li>
+
+                            <li>
+                                <i class="fa-solid fa-check"
+                                   aria-hidden="true"></i>
+
+                                <span>
+                                    Operational and technical support
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </article>
+
+                </div>
+
+
+                <div class="career-disclaimer">
+
+                    <i class="fa-solid fa-circle-info"
+                       aria-hidden="true"></i>
+
+                    These are potential career areas, not confirmed
+                    vacancies. Actual responsibilities, qualifications
+                    and recruitment requirements will be specified
+                    in each published job advertisement.
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             CURRENT OPENINGS
+        ========================= -->
+
+        <section class="section openings-section" id="openings">
+            <div class="container">
+
+                <div class="openings-wrap">
+
+                    <div class="openings-intro">
+
+                        <span class="eyebrow">
+                            Recruitment
+                        </span>
+
+                        <h2>
+                            Current Job Openings
+                        </h2>
+
+                        <p>
+                            Explore vacancies when they become available.
+                            Each confirmed opportunity will include its
+                            responsibilities, required qualifications,
+                            location, employment type and application
+                            instructions.
+                        </p>
+
+                    </div>
+
+
+                    <!--
+                        CURRENTLY NO ACTIVE VACANCIES ARE ADVERTISED.
+
+                        When PenInsure is recruiting, replace the
+                        empty-state section below with a real job-card.
+
+                        Include only verified information:
+                        - Actual job title
+                        - Confirmed location
+                        - Employment type
+                        - Closing date, if applicable
+                        - Actual requirements and responsibilities
+                        - Working application link
+
+                        See the commented job-card template near the
+                        bottom of this file.
+                    -->
+
+
+                    <div class="empty-state" id="emptyVacancies">
+
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-briefcase"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <h3>
+                            No Vacancies Currently Listed
+                        </h3>
+
+                        <p>
+                            There are no active job vacancies advertised
+                            on this page at the moment. If you are
+                            interested in pension brokerage, insurance,
+                            client service, business support or related
+                            work, you can express your interest using
+                            the CV enquiry form below.
+                        </p>
+
+                        <a href="#application" class="btn btn-dark">
+                            Express Your Interest
+
+                            <i class="fa-solid fa-arrow-right"
+                               aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+
+
+                    <!--
+                    EXAMPLE JOB CARD TEMPLATE — NOT A LIVE VACANCY
+
+                    Copy this block into .vacancy-list when a real
+                    vacancy has been confirmed.
+
+                    <div class="vacancy-list">
+
+                        <article class="job-card">
+
+                            <div class="job-heading">
+
+                                <div>
+                                    <h3>Actual Job Title</h3>
+
+                                    <div class="job-meta">
+
+                                        <span>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            Confirmed Location
+                                        </span>
+
+                                        <span>
+                                            <i class="fa-solid fa-clock"></i>
+                                            Full-time / Part-time
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                                <span class="job-status">
+                                    <i class="fa-solid fa-circle"></i>
+                                    Open
+                                </span>
+
+                            </div>
+
+                            <p class="job-summary">
+                                Replace this text with an accurate
+                                description of the advertised role.
+                            </p>
+
+                            <div class="job-actions">
+
+                                <button
+                                    type="button"
+                                    class="btn btn-dark details-toggle"
+                                    aria-expanded="false">
+
+                                    View Details
+
+                                    <i class="fa-solid fa-chevron-down"></i>
+
+                                </button>
+
+                                <a
+                                    href="#application"
+                                    class="btn btn-primary apply-link"
+                                    data-position="Actual Job Title">
+
+                                    Apply Now
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </a>
+
+                            </div>
+
+                            <div class="job-details">
+
+                                <h4>Responsibilities</h4>
+
+                                <ul>
+                                    <li>Add a confirmed responsibility.</li>
+                                    <li>Add another confirmed responsibility.</li>
+                                </ul>
+
+                                <h4>Requirements</h4>
+
+                                <ul>
+                                    <li>Add a confirmed qualification.</li>
+                                    <li>Add relevant experience requirements.</li>
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    END OF EXAMPLE JOB CARD TEMPLATE
+                    -->
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             HOW TO APPLY + CV FORM
+        ========================= -->
+
+        <section class="section application-section" id="application">
+            <div class="container">
+
+                <div class="application-grid">
+
+                    <div class="application-copy">
+
+                        <span class="eyebrow">
+                            Join Our Talent Network
+                        </span>
+
+                        <h2>
+                            Let Us Know What You Can Bring to PenInsure.
+                        </h2>
+
+                        <p>
+                            If you are interested in working with PenInsure,
+                            you can submit an expression of interest for
+                            future consideration. Tell us about your
+                            background, relevant experience and the type
+                            of work you would like to pursue.
+                        </p>
+
+                        <ul class="application-points">
+
+                            <li>
+
+                                <i class="fa-solid fa-file-lines"
+                                   aria-hidden="true"></i>
+
+                                <div>
+                                    <strong>Prepare Your CV</strong>
+
+                                    <span>
+                                        Include your education, experience,
+                                        relevant skills and contact details.
+                                    </span>
+                                </div>
+
+                            </li>
+
+
+                            <li>
+
+                                <i class="fa-solid fa-bullseye"
+                                   aria-hidden="true"></i>
+
+                                <div>
+                                    <strong>Identify Your Career Area</strong>
+
+                                    <span>
+                                        Tell us whether your interests are
+                                        in pensions, insurance, client
+                                        service, corporate support or
+                                        another relevant field.
+                                    </span>
+                                </div>
+
+                            </li>
+
+
+                            <li>
+
+                                <i class="fa-solid fa-envelope-open-text"
+                                   aria-hidden="true"></i>
+
+                                <div>
+                                    <strong>Submit Your Enquiry</strong>
+
+                                    <span>
+                                        Use the form to prepare an email
+                                        expressing your interest.
+                                    </span>
+                                </div>
+
+                            </li>
+
+
+                            <li>
+
+                                <i class="fa-solid fa-calendar-check"
+                                   aria-hidden="true"></i>
+
+                                <div>
+                                    <strong>Wait for an Appropriate Opportunity</strong>
+
+                                    <span>
+                                        An expression of interest does not
+                                        guarantee a response, interview
+                                        or employment.
+                                    </span>
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="application-form-wrap">
+
+                        <h3>
+                            Career Enquiry Form
+                        </h3>
+
+                        <p class="form-intro">
+                            Complete the form below to prepare a career
+                            enquiry email. Required fields are marked
+                            with an asterisk.
+                        </p>
+
+
+                        <div
+                            class="form-message error"
+                            id="formMessage"
+                            role="alert"
+                            aria-live="polite">
+                        </div>
+
+
+                        <form id="careerForm">
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+
+                                    <label for="fullName">
+                                        Full Name
+                                        <span class="required">*</span>
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="fullName"
+                                        name="fullName"
+                                        class="form-control"
+                                        placeholder="Enter your full name"
+                                        autocomplete="name"
+                                        required>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="email">
+                                        Email Address
+                                        <span class="required">*</span>
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        class="form-control"
+                                        placeholder="you@example.com"
+                                        autocomplete="email"
+                                        required>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="phone">
+                                        Phone Number
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        class="form-control"
+                                        placeholder="+265 ..."
+                                        autocomplete="tel">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="careerArea">
+                                        Area of Interest
+                                        <span class="required">*</span>
+                                    </label>
+
+                                    <select
+                                        id="careerArea"
+                                        name="careerArea"
+                                        class="form-control"
+                                        required>
+
+                                        <option value="">
+                                            Select an area
+                                        </option>
+
+                                        <option value="Pension and Retirement Services">
+                                            Pension &amp; Retirement Services
+                                        </option>
+
+                                        <option value="Insurance Brokerage">
+                                            Insurance Brokerage
+                                        </option>
+
+                                        <option value="Corporate and Employer Support">
+                                            Corporate &amp; Employer Support
+                                        </option>
+
+                                        <option value="Client Service and Administration">
+                                            Client Service &amp; Administration
+                                        </option>
+
+                                        <option value="Analysis and Reporting Support">
+                                            Analysis &amp; Reporting Support
+                                        </option>
+
+                                        <option value="Digital and Business Operations">
+                                            Digital &amp; Business Operations
+                                        </option>
+
+                                        <option value="Other">
+                                            Other
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label for="experience">
+                                        Relevant Experience
+                                    </label>
+
+                                    <select
+                                        id="experience"
+                                        name="experience"
+                                        class="form-control">
+
+                                        <option value="">
+                                            Select your experience level
+                                        </option>
+
+                                        <option value="Student or recent graduate">
+                                            Student / Recent Graduate
+                                        </option>
+
+                                        <option value="Entry-level">
+                                            Entry-Level
+                                        </option>
+
+                                        <option value="1–3 years">
+                                            1–3 Years
+                                        </option>
+
+                                        <option value="4–7 years">
+                                            4–7 Years
+                                        </option>
+
+                                        <option value="8 or more years">
+                                            8+ Years
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-group full">
+
+                                    <label for="message">
+                                        Tell Us About Yourself
+                                        <span class="required">*</span>
+                                    </label>
+
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        class="form-control"
+                                        placeholder="Briefly describe your background, skills and the opportunity you are interested in."
+                                        required></textarea>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="btn btn-dark"
+                                style="width: 100%;">
+
+                                Prepare Career Enquiry
+
+                                <i class="fa-solid fa-arrow-right"
+                                   aria-hidden="true"></i>
+
+                            </button>
+
+
+                            <p class="form-note">
+                                This form prepares an email using your
+                                device's email application. It does not
+                                upload your CV or submit information
+                                directly to a server.
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================
+             FINAL CTA
+        ========================= -->
+
+        <section class="cta-section">
+            <div class="container">
+
+                <div class="cta-panel">
+
+                    <div class="cta-content">
+
+                        <h2>
+                            Interested in Working With PenInsure?
+                        </h2>
+
+                        <p>
+                            Explore our services and learn more about
+                            the work we do in pension and insurance
+                            brokerage before contacting us about
+                            potential career opportunities.
+                        </p>
+
+                    </div>
+
+                    <a href="services.html" class="btn btn-primary">
+
+                        Explore Our Services
+
+                        <i class="fa-solid fa-arrow-right"
+                           aria-hidden="true"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <a href="index.html" class="brand">
+
+                        <div class="brand-symbol" aria-hidden="true">
+                            PI
+                        </div>
+
+                        <div>
+                            <div class="brand-name">
+                                Pen<span>Insure</span>
+                            </div>
+
+                            <span class="brand-description">
+                                Pension &amp; Insurance Brokerage
+                            </span>
+                        </div>
+
+                    </a>
+
+                    <p>
+                        Supporting individuals, businesses and employers
+                        as they explore pension, retirement, annuity and
+                        insurance options available through relevant
+                        providers.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Quick Links</h3>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">About Us</a>
+                        </li>
+
+                        <li>
+                            <a href="services.html">Our Services</a>
+                        </li>
+
+                        <li>
+                            <a href="team.html">Our Team</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Explore</h3>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="faq.html">Frequently Asked Questions</a>
+                        </li>
+
+                        <li>
+                            <a href="careers.html">Careers</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">Contact Us</a>
+                        </li>
+
+                        <li>
+                            <a href="privacy.html">Privacy Policy</a>
+                        </li>
+
+                        <li>
+                            <a href="terms.html">Terms of Service</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>Career Enquiries</h3>
+
+                    <ul class="footer-links">
+
+                        <!-- Replace with your verified recruitment email. -->
+                        <li>
+                            <a href="#application">
+                                Submit an Expression of Interest
+                            </a>
+                        </li>
+
+                        <li>
+                            <span>Malawi</span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; <span id="currentYear"></span>
+                    PenInsure. All rights reserved.
+                </p>
+
+                <div class="footer-bottom-links">
+
+                    <a href="privacy.html">
+                        Privacy Policy
+                    </a>
+
+                    <a href="terms.html">
+                        Terms of Service
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            /*
+             * UPDATE THIS EMAIL BEFORE PUBLISHING.
+             *
+             * Replace it with PenInsure's actual recruitment email.
+             * The example below is a placeholder and may not exist.
+             */
+
+            const CAREERS_EMAIL = "careers@peninsure.mw";
+
+
+            /* Current year */
+
+            const yearElement = document.getElementById("currentYear");
+
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+
+            /* Mobile navigation */
+
+            const menuButton = document.getElementById("mobileMenuBtn");
+            const navigation = document.getElementById("mainNav");
+
+            function closeMenu() {
+                navigation.classList.remove("open");
+                document.body.classList.remove("menu-open");
+
+                menuButton.setAttribute("aria-expanded", "false");
+
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                menuButton.innerHTML =
+                    '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+            }
+
+            menuButton.addEventListener("click", function () {
+
+                const isOpen = navigation.classList.toggle("open");
+
+                document.body.classList.toggle("menu-open", isOpen);
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    String(isOpen)
+                );
+
+                menuButton.setAttribute(
+                    "aria-label",
+                    isOpen
+                        ? "Close navigation menu"
+                        : "Open navigation menu"
+                );
+
+                menuButton.innerHTML = isOpen
+                    ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
+                    : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+
+            });
+
+
+            navigation.querySelectorAll("a").forEach(function (link) {
+
+                link.addEventListener("click", closeMenu);
+
+            });
+
+
+            document.addEventListener("keydown", function (event) {
+
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+
+            });
+
+
+            window.addEventListener("resize", function () {
+
+                if (window.innerWidth > 800) {
+                    closeMenu();
+                }
+
+            });
+
+
+            /* Expandable job details */
+
+            document.querySelectorAll(".details-toggle").forEach(
+                function (button) {
+
+                    button.addEventListener("click", function () {
+
+                        const card = button.closest(".job-card");
+
+                        const details = card.querySelector(".job-details");
+
+                        const isOpen = details.classList.toggle("open");
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            String(isOpen)
+                        );
+
+                        button.innerHTML = isOpen
+                            ? 'Hide Details <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>'
+                            : 'View Details <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>';
+
+                    });
+
+                }
+            );
+
+
+            /* Application buttons preselect a job title */
+
+            document.querySelectorAll(".apply-link").forEach(
+                function (link) {
+
+                    link.addEventListener("click", function () {
+
+                        const position = link.dataset.position || "";
+
+                        const messageField =
+                            document.getElementById("message");
+
+                        if (position && messageField) {
+
+                            const existingMessage = messageField.value.trim();
+
+                            if (!existingMessage) {
+
+                                messageField.value =
+                                    "I am interested in applying for the " +
+                                    position +
+                                    " position. ";
+
+                            }
+
+                        }
+
+                    });
+
+                }
+            );
+
+
+            /* Career enquiry form */
+
+            const careerForm = document.getElementById("careerForm");
+
+            const formMessage = document.getElementById("formMessage");
+
+            careerForm.addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                formMessage.classList.remove("visible");
+
+                if (!careerForm.checkValidity()) {
+
+                    careerForm.reportValidity();
+
+                    return;
+
+                }
+
+
+                /*
+                 * This is a mailto-based form.
+                 * It opens the visitor's configured email application.
+                 * It does not send data to a database or upload a CV.
+                 */
+
+                const fullName =
+                    document.getElementById("fullName").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const phone =
+                    document.getElementById("phone").value.trim();
+
+                const careerArea =
+                    document.getElementById("careerArea").value;
+
+                const experience =
+                    document.getElementById("experience").value;
+
+                const message =
+                    document.getElementById("message").value.trim();
+
+
+                if (!fullName || !email || !careerArea || !message) {
+
+                    formMessage.textContent =
+                        "Please complete all required fields.";
+
+                    formMessage.classList.add("visible");
+
+                    return;
+
+                }
+
+
+                const subject = "Career Enquiry - " + careerArea;
+
+                const body = [
+                    "CAREER ENQUIRY - PENINSURE",
+                    "",
+                    "Full Name: " + fullName,
+                    "Email Address: " + email,
+                    "Phone Number: " + (phone || "Not provided"),
+                    "Area of Interest: " + careerArea,
+                    "Relevant Experience: " + (experience || "Not specified"),
+                    "",
+                    "ABOUT THE APPLICANT",
+                    message,
+                    "",
+                    "Please find my career enquiry above."
+                ].join("\n");
+
+
+                const mailtoURL =
+                    "mailto:" + CAREERS_EMAIL +
+                    "?subject=" + encodeURIComponent(subject) +
+                    "&body=" + encodeURIComponent(body);
+
+
+                /*
+                 * Warn users if the recruitment email is still
+                 * the example address.
+                 */
+
+                if (CAREERS_EMAIL === "careers@peninsure.mw") {
+
+                    const confirmed = window.confirm(
+                        "The recruitment email in careers.html is still " +
+                        "set to the example address:\n\n" +
+                        CAREERS_EMAIL +
+                        "\n\nReplace it with PenInsure's actual email " +
+                        "before using this form. Continue opening the " +
+                        "email application for testing?"
+                    );
+
+                    if (!confirmed) {
+                        return;
+                    }
+
+                }
+
+
+                window.location.href = mailtoURL;
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

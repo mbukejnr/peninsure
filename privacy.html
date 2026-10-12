@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Privacy Policy | PenInsure</title>
+
+    <meta name="description" content="Read PenInsure's privacy policy to understand how personal information is collected, used, protected, and shared when you use our pension and insurance brokerage services.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #102c50;
+            --primary-dark: #0a1d35;
+            --primary-light: #194775;
+            --accent: #d9a441;
+            --accent-light: #f4dfad;
+            --text: #243449;
+            --muted: #66758a;
+            --background: #f5f7fb;
+            --white: #ffffff;
+            --border: #e1e7ef;
+            --shadow: 0 15px 40px rgba(16, 44, 80, 0.08);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: "Manrope", sans-serif;
+            line-height: 1.3;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1160px, 92%);
+            margin: 0 auto;
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            background: var(--primary);
+            color: var(--accent);
+            border-radius: 12px;
+            font-size: 1.3rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text strong {
+            font-family: "Manrope", sans-serif;
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.8px;
+        }
+
+        .logo-text span {
+            margin-top: 5px;
+            color: var(--muted);
+            font-size: 0.61rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 23px;
+        }
+
+        .nav-links a {
+            color: #46566b;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-light);
+        }
+
+        .nav-links a.active {
+            position: relative;
+        }
+
+        .nav-links a.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .nav-links .nav-cta {
+            padding: 11px 17px;
+            border-radius: 8px;
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .nav-links .nav-cta:hover {
+            background: var(--primary-light);
+            color: var(--white);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--white);
+            color: var(--primary);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 75px 0 85px;
+            color: var(--white);
+            background:
+                radial-gradient(circle at 85% 20%, rgba(217, 164, 65, 0.16), transparent 30%),
+                linear-gradient(125deg, var(--primary-dark), var(--primary) 65%, #173e69);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 370px;
+            height: 370px;
+            right: -100px;
+            top: -170px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.84rem;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-light);
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 20px;
+            padding: 8px 14px;
+            border: 1px solid rgba(244, 223, 173, 0.3);
+            border-radius: 50px;
+            color: var(--accent-light);
+            background: rgba(255, 255, 255, 0.05);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin-bottom: 22px;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            letter-spacing: -1.6px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-light);
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin-bottom: 25px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        .updated-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.82rem;
+        }
+
+        /* PRIVACY CONTENT */
+
+        .privacy-section {
+            padding: 75px 0 90px;
+            background: var(--background);
+        }
+
+        .privacy-layout {
+            display: grid;
+            grid-template-columns: 270px minmax(0, 1fr);
+            align-items: start;
+            gap: 35px;
+        }
+
+        .privacy-sidebar {
+            position: sticky;
+            top: 110px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .privacy-sidebar h2 {
+            margin-bottom: 18px;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .toc-links {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .toc-links a {
+            padding: 9px 10px;
+            border-radius: 7px;
+            color: var(--muted);
+            font-size: 0.81rem;
+            line-height: 1.5;
+            transition: color 0.2s ease, background 0.2s ease;
+        }
+
+        .toc-links a:hover {
+            color: var(--primary);
+            background: #edf2f8;
+        }
+
+        .privacy-document {
+            min-width: 0;
+            padding: 42px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .document-intro {
+            margin-bottom: 35px;
+            padding: 23px;
+            border-left: 4px solid var(--accent);
+            border-radius: 0 10px 10px 0;
+            background: #fff8e9;
+        }
+
+        .document-intro p {
+            color: #665638;
+            font-size: 0.91rem;
+        }
+
+        .privacy-part {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border);
+            scroll-margin-top: 110px;
+        }
+
+        .privacy-part:first-of-type {
+            padding-top: 0;
+        }
+
+        .privacy-part:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .privacy-part h2 {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            margin-bottom: 17px;
+            color: var(--primary);
+            font-size: 1.35rem;
+        }
+
+        .privacy-part h2 .heading-number {
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            flex-shrink: 0;
+            border-radius: 9px;
+            background: #edf2f8;
+            color: var(--primary-light);
+            font-size: 0.82rem;
+        }
+
+        .privacy-part h3 {
+            margin: 22px 0 10px;
+            color: var(--primary);
+            font-size: 1.02rem;
+        }
+
+        .privacy-part p {
+            margin-bottom: 14px;
+            color: #536176;
+            font-size: 0.91rem;
+        }
+
+        .privacy-part p:last-child {
+            margin-bottom: 0;
+        }
+
+        .privacy-part ul {
+            display: grid;
+            gap: 10px;
+            margin: 14px 0 18px;
+            padding-left: 23px;
+            color: #536176;
+            font-size: 0.9rem;
+        }
+
+        .privacy-part li::marker {
+            color: #a7771d;
+        }
+
+        .privacy-part a {
+            color: var(--primary-light);
+            font-weight: 600;
+            overflow-wrap: anywhere;
+        }
+
+        .privacy-part a:hover {
+            text-decoration: underline;
+        }
+
+        .privacy-callout {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            margin-top: 20px;
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+
+        .privacy-callout i {
+            margin-top: 4px;
+            color: #a7771d;
+        }
+
+        .privacy-callout p {
+            margin: 0;
+            font-size: 0.86rem;
+        }
+
+        /* CONTACT CTA */
+
+        .privacy-contact {
+            padding: 0 0 85px;
+            background: var(--background);
+        }
+
+        .privacy-contact-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 38px;
+            border-radius: 18px;
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .privacy-contact-box h2 {
+            margin-bottom: 12px;
+            font-size: 1.65rem;
+        }
+
+        .privacy-contact-box p {
+            max-width: 650px;
+            color: rgba(255, 255, 255, 0.76);
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-shrink: 0;
+            padding: 14px 22px;
+            border: none;
+            border-radius: 9px;
+            background: var(--accent);
+            color: var(--primary-dark);
+            cursor: pointer;
+            font-size: 0.89rem;
+            font-weight: 800;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #e8b957;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            padding: 60px 0 0;
+            background: #081a30;
+            color: var(--white);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 42px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-brand .logo-text span {
+            color: #aab7c8;
+        }
+
+        .footer-brand > p {
+            max-width: 310px;
+            color: #aab7c8;
+            font-size: 0.86rem;
+        }
+
+        .footer h3 {
+            margin-bottom: 19px;
+            font-size: 0.98rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .footer-links a,
+        .footer-contact p,
+        .footer-contact a {
+            color: #aab7c8;
+            font-size: 0.84rem;
+            overflow-wrap: anywhere;
+        }
+
+        .footer-links a:hover,
+        .footer-contact a:hover {
+            color: var(--accent-light);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: 11px;
+            margin-bottom: 13px;
+        }
+
+        .footer-contact i {
+            margin-top: 5px;
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 22px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #8e9db1;
+            font-size: 0.79rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1050px) {
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 0.79rem;
+            }
+
+            .privacy-layout {
+                grid-template-columns: 235px minmax(0, 1fr);
+                gap: 22px;
+            }
+
+            .privacy-document {
+                padding: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 780px) {
+            .nav-inner {
+                min-height: 74px;
+            }
+
+            .menu-toggle {
+                display: grid;
+                place-items: center;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 74px;
+                left: 0;
+                right: 0;
+                display: none;
+                align-items: stretch;
+                flex-direction: column;
+                gap: 0;
+                padding: 12px 4% 22px;
+                background: var(--white);
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 18px 25px rgba(16, 44, 80, 0.08);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 13px 0;
+                font-size: 0.91rem;
+            }
+
+            .nav-links a.active::after {
+                display: none;
+            }
+
+            .nav-links .nav-cta {
+                margin-top: 8px;
+                padding: 13px 16px;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 60px 0 70px;
+            }
+
+            .privacy-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-sidebar {
+                position: static;
+            }
+
+            .toc-links {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 5px;
+            }
+
+            .privacy-contact-box {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .privacy-section {
+                padding: 50px 0 60px;
+            }
+
+            .privacy-document {
+                padding: 24px 19px;
+            }
+
+            .privacy-sidebar {
+                padding: 20px;
+            }
+
+            .toc-links {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-part h2 {
+                font-size: 1.17rem;
+            }
+
+            .document-intro {
+                padding: 18px;
+            }
+
+            .privacy-contact-box {
+                padding: 25px 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .logo-text strong {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="container nav-inner">
+
+            <a href="index.html" class="logo" aria-label="PenInsure home">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div class="logo-text">
+                    <strong>PenInsure</strong>
+                    <span>Pension & Insurance Brokerage</span>
+                </div>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="team.html">Our Team</a>
+                <a href="faq.html">FAQs</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="contact.html#contact-form" class="nav-cta">
+                    Send an Enquiry
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-content">
+
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Privacy Policy</span>
+                </div>
+
+                <div class="hero-label">
+                    <i class="fa-solid fa-lock"></i>
+                    Your Privacy Matters
+                </div>
+
+                <h1>
+                    Our <span>Privacy Policy</span>
+                </h1>
+
+                <p>
+                    This policy explains how PenInsure may collect, use, store,
+                    and share personal information when you visit our website,
+                    contact us, or enquire about our pension and insurance
+                    brokerage services.
+                </p>
+
+                <div class="updated-label">
+                    <i class="fa-regular fa-calendar"></i>
+                    Effective date:
+                    <strong>Insert publication date</strong>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PRIVACY POLICY -->
+        <section class="privacy-section">
+            <div class="container privacy-layout">
+
+                <!-- TABLE OF CONTENTS -->
+                <aside class="privacy-sidebar">
+                    <h2>Policy Contents</h2>
+
+                    <nav class="toc-links" aria-label="Privacy policy contents">
+                        <a href="#introduction">1. Introduction</a>
+                        <a href="#information">2. Information We Collect</a>
+                        <a href="#collection">3. How We Collect Information</a>
+                        <a href="#use">4. How We Use Information</a>
+                        <a href="#sharing">5. Information Sharing</a>
+                        <a href="#security">6. Data Security</a>
+                        <a href="#retention">7. Data Retention</a>
+                        <a href="#rights">8. Your Privacy Rights</a>
+                        <a href="#cookies">9. Cookies and Website Data</a>
+                        <a href="#third-party">10. Third-Party Services</a>
+                        <a href="#children">11. Children's Information</a>
+                        <a href="#changes">12. Policy Updates</a>
+                        <a href="#contact-privacy">13. Contact Us</a>
+                    </nav>
+                </aside>
+
+
+                <!-- POLICY DOCUMENT -->
+                <article class="privacy-document">
+
+                    <div class="document-intro">
+                        <p>
+                            <strong>Important:</strong>
+                            This policy describes intended privacy practices
+                            and must be checked against PenInsure's actual
+                            operations before publication. It does not replace
+                            any additional privacy notices, contractual terms,
+                            or legal requirements that may apply to a particular
+                            pension or insurance arrangement.
+                        </p>
+                    </div>
+
+
+                    <!-- 1 -->
+                    <section class="privacy-part" id="introduction">
+                        <h2>
+                            <span class="heading-number">01</span>
+                            Introduction
+                        </h2>
+
+                        <p>
+                            PenInsure ("we", "our", or "us") is presented on this
+                            website as a pension and insurance brokerage serving
+                            individuals, employers, businesses, and other
+                            organisations.
+                        </p>
+
+                        <p>
+                            We recognise that personal information should be
+                            handled responsibly. This Privacy Policy explains
+                            how information may be processed when you visit our
+                            website, submit an enquiry, communicate with us,
+                            or use our services.
+                        </p>
+
+                        <p>
+                            Where we process personal information, we intend to
+                            do so for legitimate, clearly explained purposes and
+                            in accordance with applicable data-protection laws
+                            and other legal obligations.
+                        </p>
+
+                        <p>
+                            Depending on the service, a pension administrator,
+                            insurer, employer, or another organisation may
+                            independently collect and process information under
+                            its own privacy notice and legal responsibilities.
+                        </p>
+                    </section>
+
+
+                    <!-- 2 -->
+                    <section class="privacy-part" id="information">
+                        <h2>
+                            <span class="heading-number">02</span>
+                            Information We Collect
+                        </h2>
+
+                        <p>
+                            The information we collect depends on how you
+                            interact with PenInsure and the services you request.
+                            It may include the following categories.
+                        </p>
+
+                        <h3>A. Personal and Contact Information</h3>
+
+                        <ul>
+                            <li>Full name and preferred form of address.</li>
+                            <li>Email address and telephone number.</li>
+                            <li>Postal address or other contact details where necessary.</li>
+                            <li>Your preferred method of communication.</li>
+                        </ul>
+
+                        <h3>B. Business and Employer Information</h3>
+
+                        <ul>
+                            <li>Company or organisation name.</li>
+                            <li>Business contact details and professional role.</li>
+                            <li>Information about an organisation's pension or insurance enquiry.</li>
+                            <li>Relevant scheme, workforce, or administrative information provided for a requested service.</li>
+                        </ul>
+
+                        <h3>C. Pension and Insurance Enquiry Information</h3>
+
+                        <p>
+                            If you ask us to assist with a pension or insurance
+                            matter, we may need information relevant to that
+                            request. Depending on the service, this could include
+                            scheme details, policy information, provider
+                            correspondence, requested coverage information,
+                            or documents needed to coordinate an enquiry.
+                        </p>
+
+                        <p>
+                            Please do not send identity documents, financial
+                            account details, medical information, or other
+                            sensitive documents through a general website form
+                            unless we have confirmed an appropriate and secure
+                            method for doing so.
+                        </p>
+
+                        <h3>D. Website and Technical Information</h3>
+
+                        <p>
+                            Depending on the website's configuration and the
+                            services in use, technical information may include
+                            your browser type, device information, pages visited,
+                            approximate usage information, and security logs.
+                        </p>
+
+                        <p>
+                            We will update this section if the website introduces
+                            analytics, tracking technologies, or other tools that
+                            collect additional information.
+                        </p>
+                    </section>
+
+
+                    <!-- 3 -->
+                    <section class="privacy-part" id="collection">
+                        <h2>
+                            <span class="heading-number">03</span>
+                            How We Collect Information
+                        </h2>
+
+                        <p>
+                            We may collect information through several channels,
+                            depending on the services and systems PenInsure uses.
+                        </p>
+
+                        <ul>
+                            <li>
+                                <strong>Directly from you:</strong>
+                                when you complete a contact form, send an email,
+                                call us, or otherwise communicate with us.
+                            </li>
+
+                            <li>
+                                <strong>Through your organisation:</strong>
+                                when an authorised employer or business
+                                representative provides information relevant
+                                to a requested service.
+                            </li>
+
+                            <li>
+                                <strong>From relevant providers:</strong>
+                                where an insurer, pension administrator, or
+                                other service provider shares information
+                                appropriately in connection with your enquiry
+                                or an authorised arrangement.
+                            </li>
+
+                            <li>
+                                <strong>Through website technology:</strong>
+                                where technical logs, cookies, or similar
+                                technologies are actually enabled.
+                            </li>
+                        </ul>
+
+                        <p>
+                            Where information is provided on behalf of another
+                            person or organisation, the person supplying it
+                            should have the appropriate authority to do so.
+                        </p>
+                    </section>
+
+
+                    <!-- 4 -->
+                    <section class="privacy-part" id="use">
+                        <h2>
+                            <span class="heading-number">04</span>
+                            How We Use Information
+                        </h2>
+
+                        <p>
+                            Subject to applicable law and the circumstances
+                            of the enquiry, personal information may be used
+                            for purposes such as:
+                        </p>
+
+                        <ul>
+                            <li>Responding to enquiries and requests for information.</li>
+                            <li>Explaining pension and insurance brokerage services.</li>
+                            <li>Coordinating authorised communications with relevant providers.</li>
+                            <li>Assisting with requested documentation and administrative processes.</li>
+                            <li>Managing client relationships and maintaining appropriate business records.</li>
+                            <li>Supporting employer enquiries involving pension arrangements or insurance requirements.</li>
+                            <li>Protecting the website, preventing misuse, and investigating security incidents.</li>
+                            <li>Meeting applicable legal, regulatory, contractual, or record-keeping obligations.</li>
+                            <li>Sending service-related updates where appropriate.</li>
+                        </ul>
+
+                        <p>
+                            We will not treat consent as the only possible legal
+                            basis for every processing activity. Depending on
+                            the circumstances, applicable law may permit other
+                            lawful bases. Where consent is required, we will
+                            seek it as appropriate.
+                        </p>
+
+                        <p>
+                            We will not use personal information for an unrelated
+                            purpose where doing so would be inconsistent with
+                            applicable law or the information provided to you.
+                        </p>
+                    </section>
+
+
+                    <!-- 5 -->
+                    <section class="privacy-part" id="sharing">
+                        <h2>
+                            <span class="heading-number">05</span>
+                            When We May Share Information
+                        </h2>
+
+                        <p>
+                            PenInsure may need to share relevant information
+                            with other parties to respond to an enquiry or
+                            provide a requested brokerage service. Any sharing
+                            should be limited to what is appropriate for the
+                            relevant purpose and permitted by applicable law.
+                        </p>
+
+                        <p>Depending on the circumstances, recipients may include:</p>
+
+                        <ul>
+                            <li>
+                                <strong>Insurers and pension providers:</strong>
+                                where information is required to obtain
+                                quotations, make enquiries, or coordinate
+                                a service requested by you.
+                            </li>
+
+                            <li>
+                                <strong>Employers or authorised representatives:</strong>
+                                where necessary for a relevant business or
+                                employee-benefit arrangement and legally permitted.
+                            </li>
+
+                            <li>
+                                <strong>Service providers:</strong>
+                                such as website hosting, communications,
+                                secure storage, or information-technology
+                                providers, if PenInsure uses them.
+                            </li>
+
+                            <li>
+                                <strong>Professional advisers:</strong>
+                                where reasonably necessary for legal,
+                                compliance, accounting, or other professional
+                                support.
+                            </li>
+
+                            <li>
+                                <strong>Public authorities:</strong>
+                                where disclosure is required or permitted by law.
+                            </li>
+                        </ul>
+
+                        <p>
+                            We do not intend to sell personal information to
+                            third parties. Any disclosure must be considered
+                            in light of the purpose, applicable legal requirements,
+                            and any relevant contractual or confidentiality
+                            obligations.
+                        </p>
+
+                        <p>
+                            Pension providers, insurers, employers, and other
+                            recipients may process information under their own
+                            legal responsibilities and privacy policies.
+                        </p>
+                    </section>
+
+
+                    <!-- 6 -->
+                    <section class="privacy-part" id="security">
+                        <h2>
+                            <span class="heading-number">06</span>
+                            Data Security
+                        </h2>
+
+                        <p>
+                            Personal information should be protected against
+                            unauthorised access, disclosure, alteration, loss,
+                            or misuse.
+                        </p>
+
+                        <p>
+                            Depending on the systems and services in use,
+                            appropriate safeguards may include access controls,
+                            password protection, staff confidentiality
+                            obligations, secure communications, backups,
+                            and appropriate technical and organisational measures.
+                        </p>
+
+                        <p>
+                            No website, email service, or electronic storage
+                            system can be guaranteed to be completely secure.
+                            You should avoid sending sensitive documents through
+                            ordinary email or a general contact form unless
+                            a suitable secure method has been confirmed.
+                        </p>
+
+                        <p>
+                            Any actual security arrangements should be documented
+                            and maintained by PenInsure. This policy should not
+                            be interpreted as a claim that a particular security
+                            certification or technical safeguard is in place
+                            unless that has been verified.
+                        </p>
+                    </section>
+
+
+                    <!-- 7 -->
+                    <section class="privacy-part" id="retention">
+                        <h2>
+                            <span class="heading-number">07</span>
+                            How Long We Keep Information
+                        </h2>
+
+                        <p>
+                            We intend to retain personal information only for
+                            as long as reasonably necessary for the purpose
+                            for which it was collected, subject to applicable
+                            legal, regulatory, contractual, and record-keeping
+                            requirements.
+                        </p>
+
+                        <p>
+                            Retention periods may differ for general enquiries,
+                            client correspondence, business records, pension
+                            or insurance documentation, and records that must
+                            be kept by law.
+                        </p>
+
+                        <p>
+                            When information is no longer required, appropriate
+                            steps should be taken to delete it, securely dispose
+                            of it, or anonymise it, where appropriate and
+                            legally permitted.
+                        </p>
+
+                        <p>
+                            PenInsure should establish and maintain a retention
+                            schedule suited to its actual operations rather
+                            than relying on an unspecified or indefinite
+                            retention period.
+                        </p>
+                    </section>
+
+
+                    <!-- 8 -->
+                    <section class="privacy-part" id="rights">
+                        <h2>
+                            <span class="heading-number">08</span>
+                            Your Privacy Rights
+                        </h2>
+
+                        <p>
+                            Depending on applicable law and the circumstances
+                            of the processing, you may have rights concerning
+                            your personal information. These may include the
+                            right to:
+                        </p>
+
+                        <ul>
+                            <li>Ask whether personal information about you is being processed.</li>
+                            <li>Request access to relevant personal information.</li>
+                            <li>Ask for inaccurate or incomplete information to be corrected.</li>
+                            <li>Request deletion or restriction of processing where legally applicable.</li>
+                            <li>Object to certain types of processing where the law provides that right.</li>
+                            <li>Withdraw consent where processing relies on your consent.</li>
+                            <li>Raise a concern or complaint with the relevant authority where applicable.</li>
+                        </ul>
+
+                        <p>
+                            These rights are not absolute in every circumstance.
+                            Certain information may need to be retained or
+                            processed to meet legal obligations, establish
+                            or defend legal claims, or fulfil other lawful
+                            purposes.
+                        </p>
+
+                        <p>
+                            To make a privacy-related request, contact PenInsure
+                            using the contact details in the
+                            <a href="#contact-privacy">Contact Us</a> section.
+                            We may need to verify your identity and clarify
+                            your request before responding.
+                        </p>
+                    </section>
+
+
+                    <!-- 9 -->
+                    <section class="privacy-part" id="cookies">
+                        <h2>
+                            <span class="heading-number">09</span>
+                            Cookies and Website Data
+                        </h2>
+
+                        <p>
+                            Cookies are small files that websites may store
+                            on your device. They can support essential website
+                            functions, remember preferences, or measure website
+                            usage.
+                        </p>
+
+                        <p>
+                            The website may use essential technologies needed
+                            for its operation. Additional analytics or
+                            advertising technologies should only be described
+                            here if they are actually implemented.
+                        </p>
+
+                        <p>
+                            If non-essential cookies or similar technologies
+                            are introduced, PenInsure should provide any
+                            required notices and consent controls under
+                            applicable law.
+                        </p>
+
+                        <p>
+                            You may also be able to manage cookies through
+                            your browser settings. Disabling certain cookies
+                            may affect some website functions.
+                        </p>
+                    </section>
+
+
+                    <!-- 10 -->
+                    <section class="privacy-part" id="third-party">
+                        <h2>
+                            <span class="heading-number">10</span>
+                            Third-Party Websites and Services
+                        </h2>
+
+                        <p>
+                            Our website may contain links to external websites,
+                            including pension providers, insurers, or other
+                            organisations.
+                        </p>
+
+                        <p>
+                            Those websites may have their own privacy policies,
+                            security arrangements, and terms of use. PenInsure
+                            does not control every external website and
+                            encourages visitors to review the relevant policies
+                            before submitting personal information.
+                        </p>
+
+                        <p>
+                            If PenInsure uses external form-processing,
+                            analytics, hosting, or communication services,
+                            this policy should be updated to reflect the
+                            actual services used and any relevant data-sharing
+                            arrangements.
+                        </p>
+                    </section>
+
+
+                    <!-- 11 -->
+                    <section class="privacy-part" id="children">
+                        <h2>
+                            <span class="heading-number">11</span>
+                            Children's Information
+                        </h2>
+
+                        <p>
+                            This website is primarily intended for adults,
+                            individuals seeking financial protection information,
+                            employers, businesses, and other organisations.
+                        </p>
+
+                        <p>
+                            Where a pension or insurance enquiry concerns a
+                            child or another person who requires special
+                            protection under applicable law, information
+                            should be handled in accordance with the relevant
+                            legal requirements and any required authorisation.
+                        </p>
+
+                        <p>
+                            Please contact us if you believe personal information
+                            has been submitted through the website in a way
+                            that requires review.
+                        </p>
+                    </section>
+
+
+                    <!-- 12 -->
+                    <section class="privacy-part" id="changes">
+                        <h2>
+                            <span class="heading-number">12</span>
+                            Changes to This Privacy Policy
+                        </h2>
+
+                        <p>
+                            PenInsure may update this policy to reflect changes
+                            in its services, website technology, information
+                            handling practices, or applicable legal requirements.
+                        </p>
+
+                        <p>
+                            When changes are made, the revised policy should
+                            be published on this page with an updated effective
+                            date. Where required, additional notice or consent
+                            may be necessary.
+                        </p>
+
+                        <p>
+                            Visitors should review this page periodically to
+                            understand the privacy practices currently described.
+                        </p>
+                    </section>
+
+
+                    <!-- 13 -->
+                    <section class="privacy-part" id="contact-privacy">
+                        <h2>
+                            <span class="heading-number">13</span>
+                            Contact Us About Privacy
+                        </h2>
+
+                        <p>
+                            If you have questions about this Privacy Policy,
+                            want to request access to your information, or
+                            wish to raise a privacy concern, contact PenInsure
+                            through the details below.
+                        </p>
+
+                        <h3>PenInsure</h3>
+
+                        <p>
+                            <strong>Email:</strong>
+                            <a href="mailto:info@peninsure.mw">
+                                info@peninsure.mw
+                            </a>
+                        </p>
+
+                        <p>
+                            <strong>Telephone:</strong>
+                            <a href="tel:+265XXXXXXXXX">
+                                +265 XX XXX XXXX
+                            </a>
+                        </p>
+
+                        <p>
+                            <strong>Location:</strong>
+                            Malawi
+                        </p>
+
+                        <div class="privacy-callout">
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            <p>
+                                Replace the contact details above with PenInsure's
+                                verified business information before publication.
+                                If a designated privacy contact or responsible
+                                data-protection officer is required, add the
+                                appropriate contact details here.
+                            </p>
+                        </div>
+                    </section>
+
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- CONTACT CTA -->
+        <section class="privacy-contact">
+            <div class="container">
+
+                <div class="privacy-contact-box">
+
+                    <div>
+                        <h2>Questions About Your Information?</h2>
+
+                        <p>
+                            Contact PenInsure if you have questions about this
+                            policy or how your information may be handled
+                            in connection with a pension or insurance enquiry.
+                        </p>
+                    </div>
+
+                    <a href="contact.html#contact-form" class="btn">
+                        Contact PenInsure
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div class="logo-text">
+                            <strong>PenInsure</strong>
+                            <span>Pension & Insurance Brokerage</span>
+                        </div>
+                    </a>
+
+                    <p>
+                        Supporting individuals and organisations as they
+                        explore pension and insurance options through a
+                        client-focused brokerage approach.
+                    </p>
+
+                </div>
+
+
+                <div>
+                    <h3>Quick Links</h3>
+
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About Us</a>
+                        <a href="services.html">Our Services</a>
+                        <a href="team.html">Our Team</a>
+                        <a href="careers.html">Careers</a>
+                    </div>
+                </div>
+
+
+                <div>
+                    <h3>Our Services</h3>
+
+                    <div class="footer-links">
+                        <a href="services.html#pension-services">
+                            Pension Brokerage
+                        </a>
+
+                        <a href="services.html#insurance-services">
+                            Insurance Brokerage
+                        </a>
+
+                        <a href="services.html#business-services">
+                            Business Support
+                        </a>
+
+                        <a href="faq.html">Frequently Asked Questions</a>
+                    </div>
+                </div>
+
+
+                <div class="footer-contact">
+                    <h3>Contact Information</h3>
+
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+265XXXXXXXXX">
+                            +265 XX XXX XXXX
+                        </a>
+                    </p>
+
+                    <p>
+                        <i class="fa-regular fa-envelope"></i>
+                        <a href="mailto:info@peninsure.mw">
+                            info@peninsure.mw
+                        </a>
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Malawi
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; <span id="currentYear"></span> PenInsure.
+                    All rights reserved.
+                </p>
+
+                <div class="footer-bottom-links">
+                    <a href="privacy.html" aria-current="page">
+                        Privacy Policy
+                    </a>
+
+                    <a href="terms.html">Terms of Use</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script>
+        // MOBILE NAVIGATION
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+            menuToggle.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+        });
+
+        // CLOSE MOBILE MENU WHEN A LINK IS SELECTED
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("open");
+
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation menu");
+                menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        // AUTOMATIC COPYRIGHT YEAR
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

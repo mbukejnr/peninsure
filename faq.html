@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frequently Asked Questions | PenInsure</title>
+    <meta name="description" content="Find answers to common questions about PenInsure's pension, retirement, annuity and insurance brokerage services in Malawi.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #102a43;
+            --primary-light: #176b87;
+            --secondary: #20a39e;
+            --accent: #f4b942;
+            --background: #f7fafc;
+            --white: #ffffff;
+            --text: #334e68;
+            --muted: #627d98;
+            --border: #d9e2ec;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .topbar {
+            background: var(--primary);
+            color: var(--white);
+            padding: 9px 6%;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .navbar {
+            background: var(--white);
+            padding: 17px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(16, 42, 67, 0.07);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 23px;
+        }
+
+        .brand-name {
+            color: var(--primary);
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .brand-name span {
+            color: var(--secondary);
+        }
+
+        .brand-tagline {
+            color: var(--muted);
+            font-size: 9px;
+            letter-spacing: 1.2px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            list-style: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--secondary);
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 0;
+            background: none;
+            color: var(--primary);
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, var(--primary), var(--primary-light));
+            padding: 85px 6%;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--accent);
+            padding: 7px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #d9eaf2;
+            font-size: 16px;
+        }
+
+        .container {
+            width: min(100% - 40px, 900px);
+            margin: auto;
+        }
+
+        .faq-section {
+            padding: 75px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .section-heading span {
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .section-heading h2 {
+            color: var(--primary);
+            font-size: clamp(25px, 4vw, 34px);
+            margin-top: 8px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            margin-top: 10px;
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(16, 42, 67, 0.035);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 22px;
+            border: none;
+            background: var(--white);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            text-align: left;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .faq-question:hover {
+            background: #f8fbfd;
+        }
+
+        .faq-question i {
+            color: var(--secondary);
+            transition: transform 0.25s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 22px 22px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .faq-answer p {
+            margin: 0;
+        }
+
+        .faq-answer strong {
+            color: var(--primary);
+        }
+
+        .contact-box {
+            margin-top: 45px;
+            padding: 35px;
+            text-align: center;
+            background: #e8f5f4;
+            border-radius: 15px;
+        }
+
+        .contact-box h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 23px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 13px 23px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .button:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--primary);
+            color: #d9e2ec;
+            padding: 55px 6% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-brand {
+            color: var(--white);
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand span {
+            color: var(--secondary);
+        }
+
+        .footer-description {
+            max-width: 390px;
+            color: #bcccdc;
+            font-size: 14px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            font-size: 15px;
+            margin-bottom: 17px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #bcccdc;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.13);
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            color: #bcccdc;
+        }
+
+        @media (max-width: 900px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                padding: 20px 6%;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+                box-shadow: 0 10px 15px rgba(16, 42, 67, 0.08);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-about {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .topbar {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .brand-name {
+                font-size: 22px;
+            }
+
+            .brand-tagline {
+                font-size: 8px;
+            }
+
+            .hero {
+                padding: 65px 20px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .faq-question {
+                padding: 18px;
+                font-size: 14px;
+            }
+
+            .faq-answer {
+                padding: 0 18px 18px;
+            }
+
+            .contact-box {
+                padding: 25px 18px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-about {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <span>
+            <i class="fa-solid fa-shield-halved"></i>
+            Pension & Insurance Brokerage
+        </span>
+
+        <span>
+            <i class="fa-solid fa-location-dot"></i>
+            Malawi
+        </span>
+    </div>
+
+    <header class="navbar">
+        <a href="index.html" class="brand" aria-label="PenInsure home">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div>
+                <div class="brand-name">
+                    Pen<span>Insure</span>
+                </div>
+
+                <div class="brand-tagline">
+                    PENSION & INSURANCE BROKERAGE
+                </div>
+            </div>
+
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navLinks"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav>
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About Us</a>
+                </li>
+
+                <li>
+                    <a href="services.html">Services</a>
+                </li>
+
+                <li>
+                    <a href="team.html">Our Team</a>
+                </li>
+
+                <li>
+                    <a href="faq.html" class="active">FAQs</a>
+                </li>
+
+                <li>
+                    <a href="careers.html">Careers</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <span class="hero-label">
+                HELP CENTRE
+            </span>
+
+            <h1>
+                Frequently Asked Questions
+            </h1>
+
+            <p>
+                Find answers to common questions about pension brokerage,
+                retirement and annuity options, insurance brokerage, and
+                how PenInsure can help individuals and businesses explore
+                available solutions.
+            </p>
+
+        </section>
+
+
+        <!-- FAQ SECTION -->
+        <section class="faq-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        Got Questions?
+                    </span>
+
+                    <h2>
+                        How Can We Help You?
+                    </h2>
+
+                    <p>
+                        Select a question below to learn more about
+                        PenInsure and our brokerage services.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-list">
+
+
+                    <!-- FAQ 1 -->
+                    <div class="faq-item open">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="true"
+                            aria-controls="answer1"
+                        >
+                            What is PenInsure?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer1">
+
+                            <p>
+                                PenInsure is a pension and insurance brokerage
+                                business. We support individuals and businesses
+                                by helping them explore available pension,
+                                retirement, annuity and insurance options and
+                                navigate the process of engaging with relevant
+                                providers.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer2"
+                        >
+                            What pension brokerage services do you offer?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer2">
+
+                            <p>
+                                Our pension brokerage services can include
+                                support with exploring pension schemes,
+                                understanding available arrangements,
+                                comparing relevant options, coordinating
+                                provider enquiries, and navigating pension
+                                onboarding or related processes. The options
+                                available depend on the client's circumstances
+                                and the providers involved.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer3"
+                        >
+                            Does PenInsure help with retirement and annuity options?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer3">
+
+                            <p>
+                                Yes. Retirement and annuity options can form
+                                part of our pension brokerage support. We can
+                                help individuals explore available retirement
+                                income and annuity options, understand key
+                                features and terms, compare relevant provider
+                                options, and coordinate enquiries or applications.
+                                Specific products and terms are subject to the
+                                relevant provider's requirements.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer4"
+                        >
+                            What is an annuity?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer4">
+
+                            <p>
+                                An annuity is a financial arrangement designed
+                                to provide income according to the terms of the
+                                particular product. The structure, payment
+                                arrangements, eligibility, fees, guarantees,
+                                exclusions and other features vary between
+                                products and providers. PenInsure can help
+                                clients understand and explore available options
+                                rather than providing the annuity itself.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer5"
+                        >
+                            What is insurance brokerage?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer5">
+
+                            <p>
+                                Insurance brokerage involves helping clients
+                                understand and explore available insurance
+                                options and navigate discussions with relevant
+                                insurance providers. Depending on the client's
+                                needs, this may include areas such as life,
+                                general and other applicable insurance
+                                arrangements. Specific products and terms depend
+                                on the providers involved.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 6 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer6"
+                        >
+                            Does PenInsure work with individuals?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer6">
+
+                            <p>
+                                Yes. Individuals can contact PenInsure for
+                                assistance exploring pension, retirement,
+                                annuity and insurance options. We help clients
+                                understand the available choices and navigate
+                                enquiries with relevant providers.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 7 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer7"
+                        >
+                            Does PenInsure work with businesses and employers?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer7">
+
+                            <p>
+                                Yes. PenInsure can support businesses and
+                                employers with pension and insurance brokerage
+                                requirements, including exploring employee
+                                benefit arrangements, pension schemes and
+                                relevant insurance options. We can also support
+                                businesses in navigating discussions and
+                                coordination with relevant providers.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 8 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer8"
+                        >
+                            How do I get started with PenInsure?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer8">
+
+                            <p>
+                                Start by contacting PenInsure through the
+                                Contact Us page. Tell us whether your enquiry
+                                relates to an individual pension, retirement,
+                                annuity or insurance need, or a business or
+                                employer requirement. We can then understand
+                                your needs and guide you through the next steps.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 9 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer9"
+                        >
+                            Does PenInsure directly provide insurance policies,
+                            pension funds or annuities?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer9">
+
+                            <p>
+                                PenInsure's role is brokerage. We help clients
+                                explore available options and engage with
+                                relevant providers. Specific insurance policies,
+                                pension arrangements and annuity products are
+                                provided by the relevant providers and are
+                                subject to their terms, eligibility
+                                requirements and applicable conditions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 10 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer10"
+                        >
+                            Can PenInsure help me compare different options?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer10">
+
+                            <p>
+                                Where relevant information is available,
+                                PenInsure can help clients explore and compare
+                                features of available pension, retirement,
+                                annuity and insurance options. Clients should
+                                review the specific terms, costs, exclusions,
+                                eligibility requirements and other conditions
+                                before making a decision.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 11 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer11"
+                        >
+                            What information should I prepare before making
+                            an enquiry?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer11">
+
+                            <p>
+                                Prepare a brief description of what you need,
+                                any questions you want answered, and relevant
+                                non-sensitive background information. For
+                                pension or retirement enquiries, it may also
+                                help to explain whether you are enquiring as an
+                                individual or on behalf of a business or
+                                employer. Do not send passwords, PINs or
+                                unnecessary sensitive personal or financial
+                                information through an unsecured form.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 12 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer12"
+                        >
+                            How can I find out about available options and costs?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer12">
+
+                            <p>
+                                Contact PenInsure with your enquiry. Available
+                                options, quotations, fees, exclusions,
+                                eligibility conditions, payment arrangements
+                                and other terms should be confirmed with the
+                                relevant parties before you make a decision.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 13 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer13"
+                        >
+                            Does PenInsure guarantee a particular provider,
+                            product or outcome?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer13">
+
+                            <p>
+                                No. Availability, eligibility, pricing,
+                                benefits, terms and acceptance depend on the
+                                relevant provider and the applicable
+                                requirements. PenInsure's role is to help
+                                clients explore available options and navigate
+                                the brokerage process.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 14 -->
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            aria-expanded="false"
+                            aria-controls="answer14"
+                        >
+                            Where does PenInsure operate?
+
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+
+                        <div class="faq-answer" id="answer14">
+
+                            <p>
+                                PenInsure is a Malawi-based pension and
+                                insurance brokerage business. Please use the
+                                Contact Us page to enquire about service
+                                availability and the types of support relevant
+                                to your location.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT CTA -->
+                <div class="contact-box">
+
+                    <h3>
+                        Still Have Questions?
+                    </h3>
+
+                    <p>
+                        Tell us what you need help with and our team can guide
+                        you through the appropriate pension, retirement,
+                        annuity or insurance brokerage enquiry.
+                    </p>
+
+                    <a href="contact.html" class="button">
+                        Contact PenInsure
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-grid">
+
+            <div class="footer-about">
+
+                <div class="footer-brand">
+                    Pen<span>Insure</span>
+                </div>
+
+                <p class="footer-description">
+                    Pension and insurance brokerage focused on helping
+                    individuals and businesses explore pension, retirement,
+                    annuity and insurance options available through relevant
+                    providers.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="team.html">
+                    Our Team
+                </a>
+
+                <a href="faq.html">
+                    FAQs
+                </a>
+
+                <a href="careers.html">
+                    Careers
+                </a>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Legal
+                </h3>
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html">
+                    Terms of Service
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                &copy;
+                <span id="currentYear"></span>
+                PenInsure.
+                All rights reserved.
+            </span>
+
+            <span>
+                Pension & Insurance Brokerage
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        // Mobile navigation
+        const menuToggle =
+            document.getElementById('menuToggle');
+
+        const navLinks =
+            document.getElementById('navLinks');
+
+
+        menuToggle.addEventListener('click', function () {
+
+            const isOpen =
+                navLinks.classList.toggle('show');
+
+            menuToggle.setAttribute(
+                'aria-expanded',
+                isOpen
+            );
+
+            menuToggle.setAttribute(
+                'aria-label',
+                isOpen
+                    ? 'Close navigation menu'
+                    : 'Open navigation menu'
+            );
+
+            menuToggle.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+
+        // FAQ accordion
+        const faqItems =
+            document.querySelectorAll('.faq-item');
+
+
+        faqItems.forEach(function (item) {
+
+            const question =
+                item.querySelector('.faq-question');
+
+
+            question.addEventListener('click', function () {
+
+                const wasOpen =
+                    item.classList.contains('open');
+
+
+                faqItems.forEach(function (otherItem) {
+
+                    otherItem.classList.remove('open');
+
+                    otherItem
+                        .querySelector('.faq-question')
+                        .setAttribute(
+                            'aria-expanded',
+                            'false'
+                        );
+
+                });
+
+
+                if (!wasOpen) {
+
+                    item.classList.add('open');
+
+                    question.setAttribute(
+                        'aria-expanded',
+                        'true'
+                    );
+
+                }
+
+            });
+
+        });
+
+
+        // Automatic copyright year
+        document.getElementById('currentYear').textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+</html>

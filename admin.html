@@ -1,0 +1,3128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | PenInsure</title>
+
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#10243a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --navy: #10243a;
+            --navy-dark: #091827;
+            --navy-light: #1a3b59;
+            --gold: #e9ad38;
+            --gold-light: #fff4d9;
+            --white: #fff;
+            --background: #f4f6fa;
+            --text: #26364a;
+            --muted: #7a8797;
+            --border: #e5eaf0;
+            --green: #18845b;
+            --green-bg: #e7f7ef;
+            --blue: #2864c5;
+            --blue-bg: #eaf1ff;
+            --orange: #ad7010;
+            --orange-bg: #fff3dc;
+            --red: #c34242;
+            --red-bg: #ffeded;
+            --sidebar-width: 255px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--background);
+            font-size: 13px;
+        }
+
+        button, input, select, textarea {
+            font: inherit;
+        }
+
+        button, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .app {
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            inset: 0 auto 0 0;
+            z-index: 100;
+            background: var(--navy-dark);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            transition: transform .25s ease;
+        }
+
+        .brand {
+            min-height: 85px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(255,255,255,.09);
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 11px;
+            display: grid;
+            place-items: center;
+            background: var(--navy-light);
+            color: var(--gold);
+            font-size: 20px;
+        }
+
+        .brand-name {
+            font-family: "Manrope", sans-serif;
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .brand-name span {
+            color: var(--gold);
+        }
+
+        .brand-caption {
+            display: block;
+            color: #9aabbd;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 3px;
+        }
+
+        .sidebar-label {
+            padding: 26px 24px 11px;
+            color: #71859b;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+        }
+
+        .nav-list {
+            list-style: none;
+            padding: 0 12px;
+        }
+
+        .nav-list li {
+            margin-bottom: 4px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 12px 13px;
+            color: #b6c3d1;
+            border: none;
+            background: transparent;
+            border-radius: 9px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 600;
+            transition: .2s ease;
+        }
+
+        .nav-link i {
+            width: 18px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .nav-link:hover {
+            color: white;
+            background: rgba(255,255,255,.06);
+        }
+
+        .nav-link.active {
+            background: var(--navy-light);
+            color: white;
+            box-shadow: inset 3px 0 var(--gold);
+        }
+
+        .nav-link.active i {
+            color: var(--gold);
+        }
+
+        .nav-count {
+            margin-left: auto;
+            font-size: 10px;
+            padding: 3px 7px;
+            border-radius: 20px;
+            background: rgba(233,173,56,.17);
+            color: var(--gold);
+        }
+
+        .sidebar-bottom {
+            margin-top: auto;
+            padding: 18px 15px;
+            border-top: 1px solid rgba(255,255,255,.09);
+        }
+
+        .sidebar-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+        }
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: var(--gold-light);
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .sidebar-user strong {
+            display: block;
+            font-size: 11px;
+        }
+
+        .sidebar-user small {
+            display: block;
+            margin-top: 4px;
+            color: #8fa0b2;
+            font-size: 10px;
+        }
+
+        /* MAIN */
+
+        .main {
+            margin-left: var(--sidebar-width);
+            min-width: 0;
+            min-height: 100vh;
+        }
+
+        .topbar {
+            height: 76px;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .topbar-left,
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .page-title {
+            font-family: "Manrope", sans-serif;
+            color: var(--navy);
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        .breadcrumb {
+            color: var(--muted);
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        .breadcrumb span {
+            color: var(--gold);
+        }
+
+        .icon-button {
+            width: 39px;
+            height: 39px;
+            border: 1px solid var(--border);
+            background: white;
+            color: #607085;
+            border-radius: 9px;
+            display: grid;
+            place-items: center;
+            position: relative;
+        }
+
+        .icon-button:hover {
+            background: var(--background);
+        }
+
+        .notification-dot {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 7px;
+            height: 7px;
+            background: #e45656;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+
+        .role-badge {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 12px;
+            border-radius: 9px;
+            background: #edf3fb;
+            color: var(--navy);
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .role-badge i {
+            color: var(--gold);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .content {
+            max-width: 1600px;
+            margin: auto;
+            padding: 30px 32px 45px;
+        }
+
+        /* WELCOME */
+
+        .welcome {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 27px;
+        }
+
+        .welcome h2 {
+            font-family: "Manrope", sans-serif;
+            font-size: 25px;
+            letter-spacing: -.7px;
+            color: var(--navy);
+        }
+
+        .welcome p {
+            margin-top: 7px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .welcome-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            border: 1px solid transparent;
+            padding: 11px 15px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            transition: .2s ease;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--navy-light);
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--navy-dark);
+        }
+
+        .btn-outline {
+            background: white;
+            border-color: var(--border);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+        }
+
+        .btn-danger {
+            background: var(--red-bg);
+            color: var(--red);
+        }
+
+        /* DEMO NOTICE */
+
+        .demo-notice {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px 17px;
+            margin-bottom: 24px;
+            border: 1px solid #f0d89e;
+            border-radius: 10px;
+            background: #fff9e9;
+            color: #74551c;
+            line-height: 1.7;
+            font-size: 11px;
+        }
+
+        .demo-notice i {
+            font-size: 17px;
+            margin-top: 2px;
+        }
+
+        .demo-notice strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        /* STATS */
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 27px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 21px;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            box-shadow: 0 3px 12px rgba(16,36,58,.025);
+        }
+
+        .stat-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .stat-label {
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .stat-icon {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .stat-icon.blue {
+            background: var(--blue-bg);
+            color: var(--blue);
+        }
+
+        .stat-icon.gold {
+            background: var(--gold-light);
+            color: #b57a0d;
+        }
+
+        .stat-icon.green {
+            background: var(--green-bg);
+            color: var(--green);
+        }
+
+        .stat-icon.red {
+            background: var(--red-bg);
+            color: var(--red);
+        }
+
+        .stat-number {
+            font-family: "Manrope", sans-serif;
+            font-size: 29px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--navy);
+            margin-top: 16px;
+        }
+
+        .stat-description {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .stat-description strong {
+            color: var(--green);
+        }
+
+        /* PANELS */
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+            gap: 22px;
+            margin-bottom: 24px;
+        }
+
+        .panel {
+            min-width: 0;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 21px 22px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .panel-header h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 14px;
+            color: var(--navy);
+        }
+
+        .panel-header p {
+            color: var(--muted);
+            font-size: 10px;
+            margin-top: 5px;
+        }
+
+        .text-button {
+            border: none;
+            background: transparent;
+            color: #9b6b12;
+            font-size: 10px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .panel-body {
+            padding: 21px 22px;
+        }
+
+        /* QUICK ACTIONS */
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .quick-action {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-align: left;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: white;
+            padding: 14px;
+            transition: .2s ease;
+        }
+
+        .quick-action:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .quick-action-icon {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            background: #f1f5fa;
+            color: var(--navy);
+            flex-shrink: 0;
+        }
+
+        .quick-action strong {
+            display: block;
+            color: var(--navy);
+            font-size: 11px;
+        }
+
+        .quick-action small {
+            display: block;
+            color: var(--muted);
+            font-size: 9px;
+            margin-top: 5px;
+        }
+
+        /* ACTIVITY */
+
+        .activity-list {
+            list-style: none;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding-bottom: 19px;
+        }
+
+        .activity-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .activity-icon {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            background: #f1f5fa;
+            color: var(--navy);
+            border-radius: 50%;
+            font-size: 12px;
+        }
+
+        .activity-text {
+            color: #405166;
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .activity-text strong {
+            color: var(--navy);
+        }
+
+        .activity-time {
+            display: block;
+            margin-top: 4px;
+            color: #98a2af;
+            font-size: 9px;
+        }
+
+        /* TABLES */
+
+        .table-wrap {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        th {
+            padding: 13px 20px;
+            background: #fafbfd;
+            color: #8290a0;
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .7px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #edf0f4;
+            font-size: 11px;
+            color: #526174;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: #fcfdff;
+        }
+
+        .person-cell {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .person-avatar {
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #eaf0f8;
+            color: var(--navy);
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .person-cell strong {
+            display: block;
+            color: var(--navy);
+            font-size: 11px;
+        }
+
+        .person-cell small {
+            display: block;
+            color: var(--muted);
+            font-size: 9px;
+            margin-top: 4px;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 8px;
+            border-radius: 20px;
+            font-size: 9px;
+            font-weight: 800;
+        }
+
+        .status::before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .status.active {
+            background: var(--green-bg);
+            color: var(--green);
+        }
+
+        .status.pending {
+            background: var(--orange-bg);
+            color: var(--orange);
+        }
+
+        .status.draft {
+            background: #edf0f4;
+            color: #697789;
+        }
+
+        .status.inactive {
+            background: var(--red-bg);
+            color: var(--red);
+        }
+
+        .table-action {
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            background: white;
+            color: #647387;
+        }
+
+        .table-action:hover {
+            color: var(--navy);
+            border-color: var(--gold);
+        }
+
+        /* CONTENT PAGES */
+
+        .page-view {
+            display: none;
+        }
+
+        .page-view.active {
+            display: block;
+        }
+
+        .section-intro {
+            margin-bottom: 22px;
+        }
+
+        .section-intro h2 {
+            font-family: "Manrope", sans-serif;
+            color: var(--navy);
+            font-size: 23px;
+        }
+
+        .section-intro p {
+            color: var(--muted);
+            margin-top: 8px;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 230px;
+            padding: 10px 13px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: white;
+            color: var(--muted);
+        }
+
+        .search-box input {
+            width: 100%;
+            min-width: 0;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 11px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--muted);
+        }
+
+        .empty-state i {
+            font-size: 31px;
+            color: #c1cbd6;
+            margin-bottom: 14px;
+        }
+
+        .empty-state h3 {
+            font-family: "Manrope", sans-serif;
+            color: var(--navy);
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .empty-state p {
+            max-width: 430px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 11px;
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .setting-card {
+            padding: 23px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .setting-card > i {
+            color: #b47c17;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .setting-card h3 {
+            font-family: "Manrope", sans-serif;
+            color: var(--navy);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .setting-card p {
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.8;
+            margin-bottom: 17px;
+        }
+
+        /* MODAL */
+
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 300;
+            padding: 20px;
+            background: rgba(9,24,39,.62);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+        }
+
+        .modal {
+            width: min(540px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 25px 80px rgba(0,0,0,.2);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 22px 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modal-header h2 {
+            font-family: "Manrope", sans-serif;
+            color: var(--navy);
+            font-size: 17px;
+        }
+
+        .modal-close {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 7px;
+            background: #f0f3f7;
+            color: var(--navy);
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #46566b;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dce3eb;
+            border-radius: 8px;
+            outline: none;
+            background: white;
+            color: var(--text);
+            font-size: 12px;
+        }
+
+        .form-control:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(233,173,56,.12);
+        }
+
+        textarea.form-control {
+            min-height: 115px;
+            resize: vertical;
+        }
+
+        .form-help {
+            color: var(--muted);
+            font-size: 10px;
+            margin-top: 7px;
+            line-height: 1.6;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            padding: 18px 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* TOAST */
+
+        .toast {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 500;
+            max-width: 360px;
+            padding: 15px 18px;
+            border-radius: 10px;
+            background: var(--navy-dark);
+            color: white;
+            box-shadow: 0 12px 40px rgba(0,0,0,.2);
+            font-size: 12px;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .toast.show {
+            display: block;
+            animation: slideIn .2s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(8px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .sidebar-overlay {
+            display: none;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1200px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .sidebar-overlay.open {
+                display: block;
+                position: fixed;
+                inset: 0;
+                z-index: 90;
+                background: rgba(9,24,39,.5);
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .mobile-menu {
+                display: grid;
+            }
+
+            .topbar {
+                padding: 0 22px;
+            }
+
+            .content {
+                padding: 25px 22px 40px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .topbar {
+                height: 68px;
+                padding: 0 14px;
+            }
+
+            .topbar-right {
+                gap: 8px;
+            }
+
+            .role-badge {
+                padding: 9px;
+                font-size: 0;
+            }
+
+            .role-badge i {
+                font-size: 14px;
+            }
+
+            .page-title {
+                font-size: 16px;
+            }
+
+            .content {
+                padding: 22px 14px 35px;
+            }
+
+            .welcome {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .welcome h2 {
+                font-size: 22px;
+            }
+
+            .stats-grid {
+                gap: 10px;
+            }
+
+            .stat-card {
+                padding: 15px;
+            }
+
+            .stat-number {
+                font-size: 25px;
+            }
+
+            .stat-label {
+                font-size: 10px;
+            }
+
+            .stat-icon {
+                width: 33px;
+                height: 33px;
+            }
+
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .settings-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .panel-header,
+            .panel-body {
+                padding: 17px;
+            }
+
+            .search-box {
+                width: 100%;
+                min-width: 0;
+            }
+
+            .toolbar > .btn {
+                width: 100%;
+            }
+
+            .toast {
+                left: 14px;
+                right: 14px;
+                bottom: 14px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <a href="index.html" class="brand">
+            <span class="brand-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </span>
+
+            <span>
+                <span class="brand-name">Pen<span>Insure</span></span>
+                <span class="brand-caption">Administration Portal</span>
+            </span>
+        </a>
+
+        <div class="sidebar-label">Workspace</div>
+
+        <ul class="nav-list">
+            <li>
+                <button class="nav-link active" data-page="overview">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Dashboard
+                </button>
+            </li>
+
+            <li>
+                <button class="nav-link" data-page="content" data-team="pro">
+                    <i class="fa-solid fa-file-lines"></i>
+                    Website Content
+                </button>
+            </li>
+
+            <li>
+                <button class="nav-link" data-page="announcements" data-team="pro">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    News & Announcements
+                </button>
+            </li>
+
+            <li>
+                <button class="nav-link" data-page="enquiries" data-team="pro">
+                    <i class="fa-solid fa-envelope"></i>
+                    Contact Enquiries
+                    <span class="nav-count" id="enquiryCount">0</span>
+                </button>
+            </li>
+
+            <li>
+                <button class="nav-link" data-page="careers" data-team="pro">
+                    <i class="fa-solid fa-briefcase"></i>
+                    Careers & Vacancies
+                </button>
+            </li>
+        </ul>
+
+        <div class="sidebar-label">Administration</div>
+
+        <ul class="nav-list">
+            <li>
+                <button class="nav-link" data-page="users" data-team="it">
+                    <i class="fa-solid fa-users-gear"></i>
+                    Team Accounts
+                </button>
+            </li>
+
+            <li>
+                <button class="nav-link" data-page="security" data-team="it">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Security & Access
+                </button>
+            </li>
+
+            <li>
+                <button class="nav-link" data-page="activity" data-team="it">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Activity Logs
+                </button>
+            </li>
+
+            <li>
+                <button class="nav-link" data-page="settings" data-team="it">
+                    <i class="fa-solid fa-gear"></i>
+                    System Settings
+                </button>
+            </li>
+        </ul>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-user">
+                <div class="avatar" id="userAvatar">IT</div>
+
+                <div>
+                    <strong id="sidebarUserName">IT Administrator</strong>
+                    <small id="sidebarUserRole">IT Team</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="icon-button mobile-menu"
+                        id="mobileMenu"
+                        aria-label="Open navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <div class="page-title" id="topbarTitle">Dashboard Overview</div>
+                    <div class="breadcrumb">
+                        PenInsure / <span id="breadcrumbTitle">Dashboard</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="icon-button"
+                        id="notificationButton"
+                        aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <!-- DEMO ROLE PREVIEW ONLY -->
+                <div class="role-badge" title="Demonstration role selector">
+                    <i class="fa-solid fa-user-shield"></i>
+
+                    <select id="rolePreview"
+                            aria-label="Preview dashboard role"
+                            style="border:none;background:transparent;color:inherit;font-size:11px;font-weight:700;outline:none;">
+                        <option value="it">IT Team Preview</option>
+                        <option value="pro">PRO Team Preview</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div class="content">
+
+            <!-- DASHBOARD -->
+            <section class="page-view active" id="page-overview">
+
+                <div class="welcome">
+                    <div>
+                        <h2 id="welcomeTitle">Good morning, IT Team 👋</h2>
+                        <p id="welcomeDescription">
+                            Manage PenInsure's technical operations, website
+                            security and administration from one place.
+                        </p>
+                    </div>
+
+                    <div class="welcome-actions">
+                        <button class="btn btn-outline" id="refreshButton">
+                            <i class="fa-solid fa-rotate"></i>
+                            Refresh View
+                        </button>
+
+                        <button class="btn btn-primary" id="primaryAction">
+                            <i class="fa-solid fa-plus"></i>
+                            Manage Website
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="demo-notice">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <div>
+                        <strong>Prototype dashboard — not yet connected to a secure backend</strong>
+                        This page demonstrates the administration interface.
+                        The role selector only previews the IT and PRO layouts;
+                        it does not authenticate users or enforce permissions.
+                        Changes made here are not published to your live website.
+                    </div>
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label" id="statOneLabel">Website Pages</span>
+                            <span class="stat-icon blue">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </span>
+                        </div>
+
+                        <div class="stat-number" id="statOne">7</div>
+                        <div class="stat-description" id="statOneDesc">
+                            Main website pages
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label" id="statTwoLabel">Team Accounts</span>
+                            <span class="stat-icon gold">
+                                <i class="fa-solid fa-users"></i>
+                            </span>
+                        </div>
+
+                        <div class="stat-number" id="statTwo">0</div>
+                        <div class="stat-description" id="statTwoDesc">
+                            Accounts connected to the system
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label" id="statThreeLabel">Pending Enquiries</span>
+                            <span class="stat-icon red">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                            </span>
+                        </div>
+
+                        <div class="stat-number" id="statThree">0</div>
+                        <div class="stat-description" id="statThreeDesc">
+                            No live enquiry connection yet
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <div class="stat-top">
+                            <span class="stat-label" id="statFourLabel">System Status</span>
+                            <span class="stat-icon green">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </span>
+                        </div>
+
+                        <div class="stat-number" id="statFour"
+                             style="font-size:22px;">DEMO</div>
+
+                        <div class="stat-description" id="statFourDesc">
+                            Backend connection not configured
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3 id="quickActionsTitle">IT Administration</h3>
+                                <p id="quickActionsDescription">
+                                    Common administrative tasks
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="panel-body">
+                            <div class="quick-actions" id="quickActions"></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>Recent Activity</h3>
+                                <p>Actions recorded in this browser preview</p>
+                            </div>
+
+                            <button class="text-button" data-go="activity">
+                                VIEW LOGS
+                            </button>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="activity-list" id="recentActivity"></ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="panel-header">
+                        <div>
+                            <h3 id="tableTitle">Website Pages</h3>
+                            <p id="tableDescription">
+                                Website sections intended for administration
+                            </p>
+                        </div>
+
+                        <button class="text-button" data-go="content">
+                            VIEW CONTENT
+                        </button>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Page / Section</th>
+                                    <th>Purpose</th>
+                                    <th>Responsible Team</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="overviewTable"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- WEBSITE CONTENT -->
+            <section class="page-view" id="page-content">
+
+                <div class="section-intro">
+                    <h2>Website Content</h2>
+                    <p>
+                        Manage proposed updates to website pages, service
+                        descriptions, team profiles and public information.
+                    </p>
+                </div>
+
+                <div class="demo-notice">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        Content management is a demonstration. Connecting a
+                        database and publishing API is required before edits
+                        can update the live website.
+                    </div>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search"
+                               id="contentSearch"
+                               placeholder="Search website sections...">
+                    </div>
+
+                    <button class="btn btn-primary"
+                            data-action="new-content">
+                        <i class="fa-solid fa-plus"></i>
+                        New Content
+                    </button>
+                </div>
+
+                <div class="panel">
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Content Title</th>
+                                    <th>Page</th>
+                                    <th>Responsible Team</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contentTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- ANNOUNCEMENTS -->
+            <section class="page-view" id="page-announcements">
+
+                <div class="section-intro">
+                    <h2>News & Announcements</h2>
+                    <p>
+                        Prepare company announcements, public notices,
+                        service updates and other communications for review.
+                    </p>
+                </div>
+
+                <div class="demo-notice">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        Announcements created in this prototype are not
+                        published to the public website.
+                    </div>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search"
+                               id="announcementSearch"
+                               placeholder="Search announcements...">
+                    </div>
+
+                    <button class="btn btn-primary"
+                            data-action="new-announcement">
+                        <i class="fa-solid fa-plus"></i>
+                        Create Announcement
+                    </button>
+                </div>
+
+                <div class="panel">
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Created</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="announcementTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- ENQUIRIES -->
+            <section class="page-view" id="page-enquiries">
+
+                <div class="section-intro">
+                    <h2>Contact Enquiries</h2>
+                    <p>
+                        A future central inbox for website enquiries,
+                        prospective clients, employer requests and general
+                        communications.
+                    </p>
+                </div>
+
+                <div class="demo-notice">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        The contact form must be connected to a backend or
+                        authorised email service before real enquiries will
+                        appear here. No live messages are being retrieved.
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="empty-state">
+                        <i class="fa-regular fa-envelope"></i>
+                        <h3>No live enquiries connected</h3>
+                        <p>
+                            Once the website contact form is connected to
+                            the backend, authorised PRO staff can review
+                            incoming messages, assign responsibility, and
+                            track responses.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- CAREERS -->
+            <section class="page-view" id="page-careers">
+
+                <div class="section-intro">
+                    <h2>Careers & Vacancies</h2>
+                    <p>
+                        Manage proposed job advertisements, vacancy details
+                        and career announcements.
+                    </p>
+                </div>
+
+                <div class="demo-notice">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        No live vacancies are preloaded. Only publish real,
+                        approved vacancies with accurate application details.
+                    </div>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search"
+                               id="careerSearch"
+                               placeholder="Search vacancies...">
+                    </div>
+
+                    <button class="btn btn-primary"
+                            data-action="new-career">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Vacancy
+                    </button>
+                </div>
+
+                <div class="panel">
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Position</th>
+                                    <th>Department</th>
+                                    <th>Employment Type</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="careerTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- TEAM ACCOUNTS -->
+            <section class="page-view" id="page-users">
+
+                <div class="section-intro">
+                    <h2>Team Accounts</h2>
+                    <p>
+                        Plan and manage authorised access for IT administrators,
+                        PRO officers and other approved staff.
+                    </p>
+                </div>
+
+                <div class="demo-notice">
+                    <i class="fa-solid fa-lock"></i>
+                    <div>
+                        No real user accounts are connected. Actual account
+                        creation, password handling, role assignment and
+                        deactivation must be implemented on the server.
+                    </div>
+                </div>
+
+                <div class="toolbar">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search"
+                               id="userSearch"
+                               placeholder="Search team accounts...">
+                    </div>
+
+                    <button class="btn btn-primary"
+                            data-action="new-user">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Add Team Member
+                    </button>
+                </div>
+
+                <div class="panel">
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Team</th>
+                                    <th>Responsibilities</th>
+                                    <th>Access Level</th>
+                                    <th>Account Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="userTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- SECURITY -->
+            <section class="page-view" id="page-security">
+
+                <div class="section-intro">
+                    <h2>Security & Access</h2>
+                    <p>
+                        Security controls to implement for the production
+                        administration system.
+                    </p>
+                </div>
+
+                <div class="demo-notice">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <div>
+                        These are planning controls, not active security
+                        features. This HTML page does not protect the
+                        website or restrict backend access.
+                    </div>
+                </div>
+
+                <div class="settings-grid">
+
+                    <div class="setting-card">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h3>Role-Based Access Control</h3>
+                        <p>
+                            Enforce separate IT and PRO permissions on
+                            the server for every protected operation.
+                        </p>
+                        <span class="status pending">Implementation required</span>
+                    </div>
+
+                    <div class="setting-card">
+                        <i class="fa-solid fa-key"></i>
+                        <h3>Secure Authentication</h3>
+                        <p>
+                            Use secure login, password hashing, session
+                            protection and account recovery procedures.
+                        </p>
+                        <span class="status pending">Implementation required</span>
+                    </div>
+
+                    <div class="setting-card">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <h3>Multi-Factor Authentication</h3>
+                        <p>
+                            Add an additional verification step for
+                            privileged accounts where supported.
+                        </p>
+                        <span class="status pending">Implementation required</span>
+                    </div>
+
+                    <div class="setting-card">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                        <h3>Audit Trail</h3>
+                        <p>
+                            Record authenticated user actions, publication
+                            approvals, account changes and security events.
+                        </p>
+                        <span class="status pending">Implementation required</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ACTIVITY LOG -->
+            <section class="page-view" id="page-activity">
+
+                <div class="section-intro">
+                    <h2>Activity Logs</h2>
+                    <p>
+                        Review demonstration events. Production audit logs
+                        must be recorded and protected on the server.
+                    </p>
+                </div>
+
+                <div class="demo-notice">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        These browser-preview events are not a reliable
+                        security audit trail and can be changed or deleted
+                        by someone using the browser.
+                    </div>
+                </div>
+
+                <div class="toolbar">
+                    <button class="btn btn-outline" id="clearActivity">
+                        <i class="fa-solid fa-trash"></i>
+                        Clear Preview Events
+                    </button>
+                </div>
+
+                <div class="panel">
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Preview Role</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="activityTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- SETTINGS -->
+            <section class="page-view" id="page-settings">
+
+                <div class="section-intro">
+                    <h2>System Settings</h2>
+                    <p>
+                        Technical configuration areas for the future
+                        production administration platform.
+                    </p>
+                </div>
+
+                <div class="settings-grid">
+
+                    <div class="setting-card">
+                        <i class="fa-solid fa-globe"></i>
+                        <h3>Website Configuration</h3>
+                        <p>
+                            Manage approved site-wide settings, navigation,
+                            metadata and other global configuration.
+                        </p>
+                        <button class="btn btn-outline"
+                                data-action="website-settings">
+                            View Configuration
+                        </button>
+                    </div>
+
+                    <div class="setting-card">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>Database</h3>
+                        <p>
+                            Configure database connectivity, backups,
+                            recovery procedures and monitoring.
+                        </p>
+                        <button class="btn btn-outline"
+                                data-action="database-settings">
+                            View Requirements
+                        </button>
+                    </div>
+
+                    <div class="setting-card">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h3>Email Integration</h3>
+                        <p>
+                            Connect the contact form, enquiry notifications
+                            and approved organisational email service.
+                        </p>
+                        <button class="btn btn-outline"
+                                data-action="email-settings">
+                            View Requirements
+                        </button>
+                    </div>
+
+                    <div class="setting-card">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <h3>Backup & Recovery</h3>
+                        <p>
+                            Establish scheduled backups, retention policies
+                            and tested recovery procedures.
+                        </p>
+                        <button class="btn btn-outline"
+                                data-action="backup-settings">
+                            View Requirements
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modalBackdrop">
+
+    <div class="modal" role="dialog" aria-modal="true"
+         aria-labelledby="modalTitle">
+
+        <div class="modal-header">
+            <h2 id="modalTitle">Create Item</h2>
+
+            <button class="modal-close" id="modalClose"
+                    aria-label="Close dialog">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form id="modalForm">
+
+            <div class="modal-body" id="modalBody"></div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline"
+                        id="modalCancel">
+                    Cancel
+                </button>
+
+                <button type="submit" class="btn btn-primary"
+                        id="modalSubmit">
+                    Save Draft
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+<script>
+    /*
+     * PENINSURE ADMIN DASHBOARD PROTOTYPE
+     *
+     * This interface is not a secure admin system.
+     * The role selector only changes the preview.
+     * No authentication, server permissions, live publishing,
+     * or database operations are implemented here.
+     */
+
+    const $ = (selector) => document.querySelector(selector);
+
+    const $$ = (selector) => [...document.querySelectorAll(selector)];
+
+    let currentRole = "it";
+    let currentPage = "overview";
+    let modalType = "";
+    let toastTimer;
+
+    const STORAGE_KEY = "peninsure_admin_preview_v1";
+
+    const defaultState = {
+        content: [
+            {
+                title: "Home Page",
+                page: "index.html",
+                team: "IT Team",
+                status: "Existing"
+            },
+            {
+                title: "About PenInsure",
+                page: "about.html",
+                team: "PRO Team",
+                status: "Existing"
+            },
+            {
+                title: "Pension & Insurance Services",
+                page: "services.html",
+                team: "PRO Team",
+                status: "Existing"
+            },
+            {
+                title: "Frequently Asked Questions",
+                page: "faq.html",
+                team: "PRO Team",
+                status: "Existing"
+            },
+            {
+                title: "Contact Page",
+                page: "contact.html",
+                team: "PRO Team",
+                status: "Existing"
+            },
+            {
+                title: "Privacy Policy",
+                page: "privacy.html",
+                team: "IT Team",
+                status: "Existing"
+            },
+            {
+                title: "Terms & Conditions",
+                page: "terms.html",
+                team: "IT Team",
+                status: "Existing"
+            }
+        ],
+
+        announcements: [],
+        careers: [],
+
+        activity: [
+            {
+                event: "Dashboard preview initialised",
+                role: "System Preview",
+                time: new Date().toISOString()
+            }
+        ]
+    };
+
+
+    function loadState() {
+        try {
+            const stored = localStorage.getItem(STORAGE_KEY);
+
+            if (!stored) {
+                return structuredClone(defaultState);
+            }
+
+            const parsed = JSON.parse(stored);
+
+            return {
+                content: Array.isArray(parsed.content)
+                    ? parsed.content : structuredClone(defaultState.content),
+
+                announcements: Array.isArray(parsed.announcements)
+                    ? parsed.announcements : [],
+
+                careers: Array.isArray(parsed.careers)
+                    ? parsed.careers : [],
+
+                activity: Array.isArray(parsed.activity)
+                    ? parsed.activity : []
+            };
+        } catch (error) {
+            return structuredClone(defaultState);
+        }
+    }
+
+
+    let state = loadState();
+
+
+    function saveState() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        } catch (error) {
+            showToast("Unable to save this browser preview.");
+        }
+    }
+
+
+    function escapeHtml(value) {
+        return String(value ?? "").replace(/[&<>"']/g, function (character) {
+            return {
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#039;"
+            }[character];
+        });
+    }
+
+
+    function addActivity(event) {
+        state.activity.unshift({
+            event,
+            role: currentRole === "it" ? "IT Team Preview" : "PRO Team Preview",
+            time: new Date().toISOString()
+        });
+
+        state.activity = state.activity.slice(0, 100);
+
+        saveState();
+        renderActivity();
+        renderRecentActivity();
+    }
+
+
+    function showToast(message) {
+        const toast = $("#toast");
+
+        toast.textContent = message;
+        toast.classList.add("show");
+
+        clearTimeout(toastTimer);
+
+        toastTimer = setTimeout(function () {
+            toast.classList.remove("show");
+        }, 4000);
+    }
+
+
+    function formatDate(value) {
+        const date = new Date(value);
+
+        if (Number.isNaN(date.getTime())) {
+            return "Not set";
+        }
+
+        return date.toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        });
+    }
+
+
+    function formatDateTime(value) {
+        const date = new Date(value);
+
+        if (Number.isNaN(date.getTime())) {
+            return "Unknown";
+        }
+
+        return date.toLocaleString("en-GB", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+    }
+
+
+    function statusClass(status) {
+        const value = String(status).toLowerCase();
+
+        if (["published", "active", "existing", "open"].includes(value)) {
+            return "active";
+        }
+
+        if (["pending", "pending review", "submitted"].includes(value)) {
+            return "pending";
+        }
+
+        if (["draft", "saved draft"].includes(value)) {
+            return "draft";
+        }
+
+        if (["closed", "inactive", "rejected"].includes(value)) {
+            return "inactive";
+        }
+
+        return "draft";
+    }
+
+
+    function statusBadge(status) {
+        return `
+            <span class="status ${statusClass(status)}">
+                ${escapeHtml(status)}
+            </span>
+        `;
+    }
+
+
+    function navigate(page) {
+        const target = $("#page-" + page);
+
+        if (!target) return;
+
+        currentPage = page;
+
+        $$(".page-view").forEach(view => {
+            view.classList.toggle("active", view.id === "page-" + page);
+        });
+
+        $$(".nav-link").forEach(button => {
+            button.classList.toggle(
+                "active",
+                button.dataset.page === page
+            );
+        });
+
+        const activeLink = $(`.nav-link[data-page="${page}"]`);
+
+        const title = activeLink
+            ? activeLink.textContent.trim().replace(/\s+/g, " ")
+            : "Dashboard";
+
+        $("#topbarTitle").textContent =
+            page === "overview" ? "Dashboard Overview" : title;
+
+        $("#breadcrumbTitle").textContent = title;
+
+        closeSidebar();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+
+    function closeSidebar() {
+        $("#sidebar").classList.remove("open");
+        $("#sidebarOverlay").classList.remove("open");
+    }
+
+
+    function updateRole() {
+        const isIT = currentRole === "it";
+
+        $("#sidebarUserName").textContent =
+            isIT ? "IT Administrator" : "PRO Officer";
+
+        $("#sidebarUserRole").textContent =
+            isIT ? "IT Team Preview" : "PRO Team Preview";
+
+        $("#userAvatar").textContent = isIT ? "IT" : "PR";
+
+        $("#welcomeTitle").textContent =
+            isIT
+                ? "Good morning, IT Team 👋"
+                : "Good morning, PRO Team 👋";
+
+        $("#welcomeDescription").textContent =
+            isIT
+                ? "Manage PenInsure's technical operations, website security and administration from one place."
+                : "Manage website content, announcements, careers and public communications from one place.";
+
+        $("#quickActionsTitle").textContent =
+            isIT ? "IT Administration" : "PRO Workspace";
+
+        $("#quickActionsDescription").textContent =
+            isIT
+                ? "Common technical and administrative tasks"
+                : "Common content and communication tasks";
+
+        $("#primaryAction").innerHTML = isIT
+            ? '<i class="fa-solid fa-shield-halved"></i> Security & Access'
+            : '<i class="fa-solid fa-file-circle-plus"></i> Create Content';
+
+        $("#primaryAction").dataset.go =
+            isIT ? "security" : "content";
+
+        $("#statOneLabel").textContent =
+            isIT ? "Website Pages" : "Content Sections";
+
+        $("#statOne").textContent = state.content.length;
+
+        $("#statOneDesc").textContent =
+            isIT ? "Tracked website sections" : "Sections in this browser preview";
+
+        $("#statTwoLabel").textContent =
+            isIT ? "Team Accounts" : "Draft Announcements";
+
+        $("#statTwo").textContent =
+            isIT ? "0" : state.announcements.filter(
+                item => item.status === "Draft"
+            ).length;
+
+        $("#statTwoDesc").textContent =
+            isIT ? "No live accounts connected" : "Saved locally in this browser";
+
+        $("#statThreeLabel").textContent =
+            isIT ? "Security Controls" : "Published Announcements";
+
+        $("#statThree").textContent = "0";
+
+        $("#statThreeDesc").textContent =
+            isIT ? "Production controls not configured" : "No live publishing connected";
+
+        $("#statFourLabel").textContent =
+            isIT ? "Backend Status" : "Publishing Status";
+
+        $("#statFour").textContent = "DEMO";
+
+        $("#statFourDesc").textContent =
+            isIT ? "Authentication not configured" : "Website publishing not connected";
+
+        const quickActions = isIT
+            ? [
+                {
+                    icon: "fa-users-gear",
+                    title: "Team Accounts",
+                    description: "Plan user access",
+                    page: "users"
+                },
+                {
+                    icon: "fa-shield-halved",
+                    title: "Security & Access",
+                    description: "Review security requirements",
+                    page: "security"
+                },
+                {
+                    icon: "fa-clock-rotate-left",
+                    title: "Activity Logs",
+                    description: "Review preview events",
+                    page: "activity"
+                },
+                {
+                    icon: "fa-gear",
+                    title: "System Settings",
+                    description: "View technical requirements",
+                    page: "settings"
+                }
+            ]
+            : [
+                {
+                    icon: "fa-file-lines",
+                    title: "Website Content",
+                    description: "Review website sections",
+                    page: "content"
+                },
+                {
+                    icon: "fa-bullhorn",
+                    title: "Announcements",
+                    description: "Create public updates",
+                    page: "announcements"
+                },
+                {
+                    icon: "fa-envelope",
+                    title: "Contact Enquiries",
+                    description: "View inbox setup",
+                    page: "enquiries"
+                },
+                {
+                    icon: "fa-briefcase",
+                    title: "Careers",
+                    description: "Manage vacancies",
+                    page: "careers"
+                }
+            ];
+
+        $("#quickActions").innerHTML = quickActions.map(item => `
+            <button class="quick-action" data-go="${item.page}">
+                <span class="quick-action-icon">
+                    <i class="fa-solid ${item.icon}"></i>
+                </span>
+                <span>
+                    <strong>${item.title}</strong>
+                    <small>${item.description}</small>
+                </span>
+            </button>
+        `).join("");
+
+        $("#tableTitle").textContent =
+            isIT ? "Website Administration Overview" : "Content Overview";
+
+        $("#tableDescription").textContent =
+            isIT
+                ? "Website sections and their intended responsibilities"
+                : "Website sections managed by the communications team";
+
+        $$(".nav-link[data-team]").forEach(link => {
+            const allowed = link.dataset.team === currentRole;
+
+            link.style.display = allowed ? "flex" : "none";
+        });
+
+        if (currentPage !== "overview") {
+            const currentLink = $(`.nav-link[data-page="${currentPage}"]`);
+
+            if (
+                currentLink &&
+                currentLink.dataset.team &&
+                currentLink.dataset.team !== currentRole
+            ) {
+                navigate("overview");
+            }
+        }
+
+        renderOverviewTable();
+        renderRecentActivity();
+    }
+
+
+    function renderOverviewTable() {
+        const rows = state.content.filter(item => {
+            return currentRole === "it" || item.team === "PRO Team";
+        });
+
+        $("#overviewTable").innerHTML = rows.length
+            ? rows.map(item => `
+                <tr>
+                    <td><strong>${escapeHtml(item.title)}</strong></td>
+                    <td>${escapeHtml(item.page)}</td>
+                    <td>${escapeHtml(item.team)}</td>
+                    <td>${statusBadge(item.status)}</td>
+                </tr>
+            `).join("")
+            : `<tr><td colspan="4">No sections available.</td></tr>`;
+    }
+
+
+    function renderContent() {
+        const query = ($("#contentSearch").value || "").toLowerCase();
+
+        const rows = state.content.filter(item => {
+            return (
+                item.title.toLowerCase().includes(query) ||
+                item.page.toLowerCase().includes(query) ||
+                item.team.toLowerCase().includes(query)
+            );
+        });
+
+        $("#contentTable").innerHTML = rows.length
+            ? rows.map((item, index) => `
+                <tr>
+                    <td><strong>${escapeHtml(item.title)}</strong></td>
+                    <td>${escapeHtml(item.page)}</td>
+                    <td>${escapeHtml(item.team)}</td>
+                    <td>${statusBadge(item.status)}</td>
+                    <td>
+                        <button class="table-action"
+                                data-edit-content="${index}"
+                                aria-label="Edit content">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join("")
+            : `<tr><td colspan="5">No matching content.</td></tr>`;
+    }
+
+
+    function renderAnnouncements() {
+        const query = ($("#announcementSearch").value || "").toLowerCase();
+
+        const rows = state.announcements.filter(item =>
+            item.title.toLowerCase().includes(query) ||
+            item.category.toLowerCase().includes(query)
+        );
+
+        $("#announcementTable").innerHTML = rows.length
+            ? rows.map((item, index) => `
+                <tr>
+                    <td><strong>${escapeHtml(item.title)}</strong></td>
+                    <td>${escapeHtml(item.category)}</td>
+                    <td>${formatDate(item.createdAt)}</td>
+                    <td>${statusBadge(item.status)}</td>
+                    <td>
+                        <button class="table-action"
+                                data-edit-announcement="${index}"
+                                aria-label="Edit announcement">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join("")
+            : `<tr><td colspan="5">
+                <div class="empty-state">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <h3>No announcements yet</h3>
+                    <p>Create a draft announcement to preview the workflow.</p>
+                </div>
+            </td></tr>`;
+    }
+
+
+    function renderCareers() {
+        const query = ($("#careerSearch").value || "").toLowerCase();
+
+        const rows = state.careers.filter(item =>
+            item.title.toLowerCase().includes(query) ||
+            item.department.toLowerCase().includes(query)
+        );
+
+        $("#careerTable").innerHTML = rows.length
+            ? rows.map((item, index) => `
+                <tr>
+                    <td><strong>${escapeHtml(item.title)}</strong></td>
+                    <td>${escapeHtml(item.department)}</td>
+                    <td>${escapeHtml(item.type)}</td>
+                    <td>${statusBadge(item.status)}</td>
+                    <td>
+                        <button class="table-action"
+                                data-edit-career="${index}"
+                                aria-label="Edit vacancy">
+                            <i class="fa-solid fa-pen"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join("")
+            : `<tr><td colspan="5">
+                <div class="empty-state">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h3>No vacancies added</h3>
+                    <p>Add a real approved vacancy to preview career management.</p>
+                </div>
+            </td></tr>`;
+    }
+
+
+    function renderUsers() {
+        $("#userTable").innerHTML = `
+            <tr>
+                <td>
+                    <div class="person-cell">
+                        <span class="person-avatar">IT</span>
+                        <span>
+                            <strong>IT Team</strong>
+                            <small>Technical administration</small>
+                        </span>
+                    </div>
+                </td>
+                <td>Security, accounts, technical maintenance</td>
+                <td>IT administrator</td>
+                <td>${statusBadge("Proposed role")}</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="person-cell">
+                        <span class="person-avatar">PR</span>
+                        <span>
+                            <strong>PRO Team</strong>
+                            <small>Public relations and communications</small>
+                        </span>
+                    </div>
+                </td>
+                <td>Content, announcements, enquiries and careers</td>
+                <td>Content manager</td>
+                <td>${statusBadge("Proposed role")}</td>
+            </tr>
+        `;
+    }
+
+
+    function renderActivity() {
+        $("#activityTable").innerHTML = state.activity.length
+            ? state.activity.map(item => `
+                <tr>
+                    <td>${escapeHtml(item.event)}</td>
+                    <td>${escapeHtml(item.role)}</td>
+                    <td>${formatDateTime(item.time)}</td>
+                </tr>
+            `).join("")
+            : `<tr><td colspan="3">No preview events recorded.</td></tr>`;
+    }
+
+
+    function renderRecentActivity() {
+        const items = state.activity.slice(0, 4);
+
+        $("#recentActivity").innerHTML = items.length
+            ? items.map(item => `
+                <li class="activity-item">
+                    <span class="activity-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </span>
+
+                    <span class="activity-text">
+                        <strong>${escapeHtml(item.role)}</strong><br>
+                        ${escapeHtml(item.event)}
+                        <span class="activity-time">
+                            ${formatDateTime(item.time)}
+                        </span>
+                    </span>
+                </li>
+            `).join("")
+            : `<li class="activity-text">No preview activity yet.</li>`;
+    }
+
+
+    function renderAll() {
+        renderContent();
+        renderAnnouncements();
+        renderCareers();
+        renderUsers();
+        renderActivity();
+        renderOverviewTable();
+        renderRecentActivity();
+
+        $("#enquiryCount").textContent = "0";
+
+        $("#statOne").textContent = state.content.length;
+
+        if (currentRole === "pro") {
+            $("#statTwo").textContent = state.announcements.filter(
+                item => item.status === "Draft"
+            ).length;
+        }
+    }
+
+
+    function showModal(title, type, values = {}) {
+        modalType = type;
+
+        $("#modalTitle").textContent = title;
+
+        $("#modalSubmit").textContent =
+            type === "new-user" ? "Continue" : "Save Draft";
+
+        let fields = "";
+
+        if (type === "new-content" || type === "edit-content") {
+            fields = `
+                <div class="form-group">
+                    <label for="itemTitle">Content Title</label>
+                    <input class="form-control" id="itemTitle"
+                           name="title" required maxlength="120"
+                           value="${escapeHtml(values.title || "")}"
+                           placeholder="e.g. Pension Services">
+                </div>
+
+                <div class="form-group">
+                    <label for="itemPage">Website Page</label>
+                    <input class="form-control" id="itemPage"
+                           name="page" required maxlength="120"
+                           value="${escapeHtml(values.page || "")}"
+                           placeholder="e.g. services.html">
+                </div>
+
+                <div class="form-group">
+                    <label for="itemTeam">Responsible Team</label>
+                    <select class="form-control" id="itemTeam" name="team">
+                        <option value="PRO Team">PRO Team</option>
+                        <option value="IT Team">IT Team</option>
+                    </select>
+                </div>
+
+                <p class="form-help">
+                    This creates or edits a local tracking record only.
+                    It does not change the actual HTML page.
+                </p>
+            `;
+        }
+
+        if (type === "new-announcement" || type === "edit-announcement") {
+            fields = `
+                <div class="form-group">
+                    <label for="itemTitle">Announcement Title</label>
+                    <input class="form-control" id="itemTitle"
+                           name="title" required maxlength="150"
+                           value="${escapeHtml(values.title || "")}"
+                           placeholder="Enter a clear title">
+                </div>
+
+                <div class="form-group">
+                    <label for="itemCategory">Category</label>
+                    <select class="form-control" id="itemCategory" name="category">
+                        <option>Company News</option>
+                        <option>Service Update</option>
+                        <option>Public Notice</option>
+                        <option>Event</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="itemDescription">Announcement Details</label>
+                    <textarea class="form-control" id="itemDescription"
+                              name="description" required maxlength="5000"
+                              placeholder="Enter the announcement...">${escapeHtml(values.description || "")}</textarea>
+                </div>
+
+                <p class="form-help">
+                    Saved announcements remain drafts in this browser.
+                    Publishing requires a connected backend and an
+                    authorised approval workflow.
+                </p>
+            `;
+        }
+
+        if (type === "new-career" || type === "edit-career") {
+            fields = `
+                <div class="form-group">
+                    <label for="itemTitle">Position Title</label>
+                    <input class="form-control" id="itemTitle"
+                           name="title" required maxlength="120"
+                           value="${escapeHtml(values.title || "")}"
+                           placeholder="Enter approved vacancy title">
+                </div>
+
+                <div class="form-group">
+                    <label for="itemDepartment">Department</label>
+                    <select class="form-control" id="itemDepartment" name="department">
+                        <option>IT Team</option>
+                        <option>PRO Team</option>
+                        <option>Pension Brokerage</option>
+                        <option>Insurance Brokerage</option>
+                        <option>Administration</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="itemType">Employment Type</label>
+                    <select class="form-control" id="itemType" name="type">
+                        <option>Full-time</option>
+                        <option>Part-time</option>
+                        <option>Contract</option>
+                        <option>Internship</option>
+                    </select>
+                </div>
+
+                <p class="form-help">
+                    Add only genuine, authorised vacancies. This preview
+                    does not publish jobs or collect applications.
+                </p>
+            `;
+        }
+
+        if (type === "new-user") {
+            fields = `
+                <div class="form-group">
+                    <label for="itemName">Team Member Name</label>
+                    <input class="form-control" id="itemName"
+                           name="name" required maxlength="120"
+                           placeholder="Enter staff member's name">
+                </div>
+
+                <div class="form-group">
+                    <label for="itemEmail">Work Email</label>
+                    <input class="form-control" id="itemEmail"
+                           name="email" type="email" required
+                           placeholder="name@company.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="itemRole">Role</label>
+                    <select class="form-control" id="itemRole" name="role">
+                        <option value="IT">IT Team</option>
+                        <option value="PRO">PRO Team</option>
+                    </select>
+                </div>
+
+                <p class="form-help">
+                    This demonstration will not create an account or send
+                    an invitation. Production accounts require server-side
+                    authentication and authorised role assignment.
+                </p>
+            `;
+        }
+
+        $("#modalBody").innerHTML = fields;
+
+        if (values.team) {
+            $("#itemTeam") && ($("#itemTeam").value = values.team);
+        }
+
+        if (values.category) {
+            $("#itemCategory") && ($("#itemCategory").value = values.category);
+        }
+
+        if (values.department) {
+            $("#itemDepartment") && ($("#itemDepartment").value = values.department);
+        }
+
+        if (values.type) {
+            $("#itemType") && ($("#itemType").value = values.type);
+        }
+
+        $("#modalBackdrop").classList.add("open");
+
+        setTimeout(() => {
+            $("#modalBody input, #modalBody textarea")?.focus();
+        }, 50);
+    }
+
+
+    function closeModal() {
+        $("#modalBackdrop").classList.remove("open");
+        $("#modalForm").reset();
+        modalType = "";
+    }
+
+
+    function submitModal(event) {
+        event.preventDefault();
+
+        const formData = new FormData($("#modalForm"));
+        const data = Object.fromEntries(formData.entries());
+
+        if (modalType === "new-content" || modalType === "edit-content") {
+            if (modalType === "edit-content") {
+                const index = Number($("#modalForm").dataset.editIndex);
+
+                if (state.content[index]) {
+                    state.content[index] = {
+                        ...state.content[index],
+                        title: data.title.trim(),
+                        page: data.page.trim(),
+                        team: data.team
+                    };
+                }
+            } else {
+                state.content.push({
+                    title: data.title.trim(),
+                    page: data.page.trim(),
+                    team: data.team,
+                    status: "Draft"
+                });
+            }
+
+            addActivity("Website content tracking record saved");
+            showToast("Saved in this browser preview. The live website was not changed.");
+        }
+
+        if (modalType === "new-announcement" || modalType === "edit-announcement") {
+            if (modalType === "edit-announcement") {
+                const index = Number($("#modalForm").dataset.editIndex);
+
+                if (state.announcements[index]) {
+                    state.announcements[index] = {
+                        ...state.announcements[index],
+                        title: data.title.trim(),
+                        category: data.category,
+                        description: data.description.trim()
+                    };
+                }
+            } else {
+                state.announcements.unshift({
+                    title: data.title.trim(),
+                    category: data.category,
+                    description: data.description.trim(),
+                    status: "Draft",
+                    createdAt: new Date().toISOString()
+                });
+            }
+
+            addActivity("Announcement draft saved");
+            showToast("Announcement draft saved locally. Nothing was published.");
+        }
+
+        if (modalType === "new-career" || modalType === "edit-career") {
+            if (modalType === "edit-career") {
+                const index = Number($("#modalForm").dataset.editIndex);
+
+                if (state.careers[index]) {
+                    state.careers[index] = {
+                        ...state.careers[index],
+                        title: data.title.trim(),
+                        department: data.department,
+                        type: data.type
+                    };
+                }
+            } else {
+                state.careers.unshift({
+                    title: data.title.trim(),
+                    department: data.department,
+                    type: data.type,
+                    status: "Draft"
+                });
+            }
+
+            addActivity("Career vacancy draft saved");
+            showToast("Vacancy draft saved locally. It was not published.");
+        }
+
+        if (modalType === "new-user") {
+            addActivity("Team account creation was requested in preview");
+            showToast("No account was created. Connect the secure backend to add real users.");
+        }
+
+        saveState();
+        closeModal();
+        renderAll();
+        updateRole();
+    }
+
+
+    function editContent(index) {
+        const item = state.content[index];
+        if (!item) return;
+
+        $("#modalForm").dataset.editIndex = index;
+        showModal("Edit Content Record", "edit-content", item);
+    }
+
+
+    function editAnnouncement(index) {
+        const item = state.announcements[index];
+        if (!item) return;
+
+        $("#modalForm").dataset.editIndex = index;
+        showModal("Edit Announcement Draft", "edit-announcement", item);
+    }
+
+
+    function editCareer(index) {
+        const item = state.careers[index];
+        if (!item) return;
+
+        $("#modalForm").dataset.editIndex = index;
+        showModal("Edit Vacancy Draft", "edit-career", item);
+    }
+
+
+    function handleAction(action) {
+        const forms = {
+            "new-content": ["Create Content Record", "new-content"],
+            "new-announcement": ["Create Announcement Draft", "new-announcement"],
+            "new-career": ["Add Vacancy Draft", "new-career"],
+            "new-user": ["Add Team Member", "new-user"]
+        };
+
+        if (forms[action]) {
+            showModal(forms[action][0], forms[action][1]);
+            return;
+        }
+
+        const messages = {
+            "website-settings":
+                "Website settings require a server-side configuration system.",
+
+            "database-settings":
+                "Database connection details must be configured securely on the server.",
+
+            "email-settings":
+                "Connect an approved email service or backend endpoint to process real enquiries.",
+
+            "backup-settings":
+                "Configure scheduled server-side backups and test recovery procedures."
+        };
+
+        if (messages[action]) {
+            showToast(messages[action]);
+        }
+    }
+
+
+    // Sidebar navigation
+    $$(".nav-link[data-page]").forEach(button => {
+        button.addEventListener("click", () => {
+            navigate(button.dataset.page);
+        });
+    });
+
+
+    // Navigation shortcuts
+    document.addEventListener("click", event => {
+        const goButton = event.target.closest("[data-go]");
+
+        if (goButton) {
+            navigate(goButton.dataset.go);
+        }
+
+        const actionButton = event.target.closest("[data-action]");
+
+        if (actionButton) {
+            handleAction(actionButton.dataset.action);
+        }
+
+        const editContentButton = event.target.closest("[data-edit-content]");
+
+        if (editContentButton) {
+            editContent(Number(editContentButton.dataset.editContent));
+        }
+
+        const editAnnouncementButton = event.target.closest("[data-edit-announcement]");
+
+        if (editAnnouncementButton) {
+            editAnnouncement(Number(editAnnouncementButton.dataset.editAnnouncement));
+        }
+
+        const editCareerButton = event.target.closest("[data-edit-career]");
+
+        if (editCareerButton) {
+            editCareer(Number(editCareerButton.dataset.editCareer));
+        }
+    });
+
+
+    // Role preview
+    $("#rolePreview").addEventListener("change", event => {
+        currentRole = event.target.value;
+
+        addActivity(
+            currentRole === "it"
+                ? "Switched to IT team layout preview"
+                : "Switched to PRO team layout preview"
+        );
+
+        updateRole();
+
+        showToast(
+            "Preview changed. This is not a real security permission change."
+        );
+    });
+
+
+    // Search
+    $("#contentSearch").addEventListener("input", renderContent);
+    $("#announcementSearch").addEventListener("input", renderAnnouncements);
+    $("#careerSearch").addEventListener("input", renderCareers);
+
+    $("#userSearch").addEventListener("input", event => {
+        const query = event.target.value.toLowerCase();
+
+        $$("#userTable tr").forEach(row => {
+            row.style.display = row.textContent.toLowerCase().includes(query)
+                ? ""
+                : "none";
+        });
+    });
+
+
+    // Modal
+    $("#modalClose").addEventListener("click", closeModal);
+    $("#modalCancel").addEventListener("click", closeModal);
+    $("#modalForm").addEventListener("submit", submitModal);
+
+    $("#modalBackdrop").addEventListener("click", event => {
+        if (event.target === $("#modalBackdrop")) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            closeModal();
+            closeSidebar();
+        }
+    });
+
+
+    // Mobile navigation
+    $("#mobileMenu").addEventListener("click", () => {
+        $("#sidebar").classList.toggle("open");
+        $("#sidebarOverlay").classList.toggle("open");
+    });
+
+    $("#sidebarOverlay").addEventListener("click", closeSidebar);
+
+
+    // Refresh demonstration data
+    $("#refreshButton").addEventListener("click", () => {
+        renderAll();
+        updateRole();
+        showToast("Browser preview refreshed.");
+    });
+
+
+    // Primary action
+    $("#primaryAction").addEventListener("click", event => {
+        const page = event.currentTarget.dataset.go;
+
+        if (page) navigate(page);
+    });
+
+
+    // Notifications
+    $("#notificationButton").addEventListener("click", () => {
+        showToast("No live notification service is connected.");
+    });
+
+
+    // Clear preview activity
+    $("#clearActivity").addEventListener("click", () => {
+        const confirmed = confirm(
+            "Clear all locally stored preview activity events?"
+        );
+
+        if (!confirmed) return;
+
+        state.activity = [];
+        saveState();
+        renderActivity();
+        renderRecentActivity();
+
+        showToast("Preview events cleared.");
+    });
+
+
+    // Initial render
+    $("#currentYear")?.remove();
+
+    renderAll();
+    updateRole();
+
+</script>
+
+</body>
+</html>
